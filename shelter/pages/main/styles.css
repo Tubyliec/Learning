@@ -1,0 +1,127 @@
+/* Global */
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --color-primary: #f1cdb3;
+    --color-primary-dark: #cdcdcd;
+    --color-second: #fff;
+    --color-dark: #292929;
+}
+
+.container {
+    display: flex;
+}
+
+@font-face {
+    font-family: "Georgia";
+    src: url("../../assets/fonts/georgia/georgia-regular.ttf") format("ttf");
+  }
+
+/* Start Screen */
+
+#start_screen {
+    display: flex;
+    flex-direction: column;
+    background-image: url('../../assets/images/main/start-screen-background.png');
+    background: linear-gradient(90deg, rgba(91,72,58,1) 0%, rgba(38,36,37,1) 100%);
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 30px 40px;
+}
+
+#logo {
+    display: flex;
+    flex-direction: column;
+}
+
+#logo p {
+    margin:0;
+}
+
+#start_screen h1 {
+    font-family: Georgia;
+    color: var(--color-primary);
+    padding-bottom: 10px;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 110%;
+    letter-spacing: 0.06em;
+}
+
+#logo_phrase {
+    font-family: Arial;
+    color: var(--color-second);
+}
+
+nav ul {
+    display: flex;
+}
+
+nav li {
+    list-style: none;
+    margin-left: 35px;
+    font-family: Arial;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 160%;
+    color: var(--color-primary-dark);
+}
+
+#welcome {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 60px 40px 0 40px;
+}
+
+#start_screen h2 {
+    font-family: Georgia;
+    font-weight: 400;
+    font-size: 44px;
+    line-height: 130%;
+    color: var(--color-second);
+    
+}
+
+#welcome_text p {
+    font-family: Arial;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 160%;
+    color: var(--color-primary-dark);
+}
+
+#welcome_text p, h2 {
+    margin-bottom: 42px;
+}
+
+nav ul li:first-child {
+    border-bottom: 3px var(--color-primary) solid;
+}
+
+#button_items {
+    background-color: var(--color-primary);
+    border-radius: 100px;
+    width: 207px;
+    height: 52px;
+}
+
+#button_items p {
+    border-radius: 100px;
+    background-color: var(--color-primary);
+    color: var(--color-dark);
+    font-family: Georgia;
+    font-weight: 400;
+    font-size: 17px;
+    letter-spacing: 0.06em;
+    padding: 15px 45px;
+}
