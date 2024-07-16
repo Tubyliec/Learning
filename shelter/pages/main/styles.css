@@ -10,10 +10,13 @@
     --color-primary-dark: #cdcdcd;
     --color-second: #fff;
     --color-dark: #292929;
+    --color-dark-second: #545454;
+    --color-dark-third: #4c4c4c;
 }
 
 .container {
     display: flex;
+    flex-direction: column;
 }
 
 @font-face {
@@ -81,6 +84,7 @@ nav li {
     justify-content: space-between;
     align-items: center;
     margin: 60px 40px 0 40px;
+    height: 728px;
 }
 
 #start_screen h2 {
@@ -125,3 +129,47 @@ nav ul li:first-child {
     letter-spacing: 0.06em;
     padding: 15px 45px;
 }
+
+/* About */
+
+#about_content {
+    display: flex;
+    height: 408px;
+    margin: 80px 40px 100px 40px;
+    justify-content: space-around;
+}
+
+#about_image {
+    width: 300px;
+    margin-left: 175px;
+    margin-right: 60px;
+}
+
+#about_text {
+    display: flex;
+    flex-direction: column;
+    min-width: 430px;
+    margin: 14px 175px 14px 60px;
+}
+
+#about_text h3, p {
+    margin-bottom: 25px;
+}
+
+#about_text h3 {
+    font-family: Georgia;
+    color: var(--color-dark-second);
+    font-weight: 400;
+    font-size: 35px;
+    line-height: 130%;
+    letter-spacing: 0.06em;
+}
+
+#about_text p {
+    font-family: Arial;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 160%;
+    color: var(--color-dark-third);
+}
+
