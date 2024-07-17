@@ -3,6 +3,8 @@
 * {
     margin: 0;
     padding: 0;
+    font-weight: 400;
+    letter-spacing: 0.06em;
 }
 
 :root {
@@ -12,6 +14,15 @@
     --color-dark: #292929;
     --color-dark-second: #545454;
     --color-dark-third: #4c4c4c;
+    --color-light: #f6f6f6;
+    --color-light-second: #fafafa;
+}
+
+h3 {
+    font-family: Georgia;
+    color: var(--color-dark-second);
+    font-size: 35px;
+    line-height: 130%;
 }
 
 .container {
@@ -54,10 +65,8 @@ header {
     font-family: Georgia;
     color: var(--color-primary);
     padding-bottom: 10px;
-    font-weight: 400;
     font-size: 32px;
     line-height: 110%;
-    letter-spacing: 0.06em;
 }
 
 #logo_phrase {
@@ -73,7 +82,6 @@ nav li {
     list-style: none;
     margin-left: 35px;
     font-family: Arial;
-    font-weight: 400;
     font-size: 15px;
     line-height: 160%;
     color: var(--color-primary-dark);
@@ -89,7 +97,6 @@ nav li {
 
 #start_screen h2 {
     font-family: Georgia;
-    font-weight: 400;
     font-size: 44px;
     line-height: 130%;
     color: var(--color-second);
@@ -98,7 +105,6 @@ nav li {
 
 #welcome_text p {
     font-family: Arial;
-    font-weight: 400;
     font-size: 15px;
     line-height: 160%;
     color: var(--color-primary-dark);
@@ -124,9 +130,7 @@ nav ul li:first-child {
     background-color: var(--color-primary);
     color: var(--color-dark);
     font-family: Georgia;
-    font-weight: 400;
     font-size: 17px;
-    letter-spacing: 0.06em;
     padding: 15px 45px;
 }
 
@@ -152,24 +156,104 @@ nav ul li:first-child {
     margin: 14px 175px 14px 60px;
 }
 
-#about_text h3, p {
+#about_text h3, #about_text p {
     margin-bottom: 25px;
-}
-
-#about_text h3 {
-    font-family: Georgia;
-    color: var(--color-dark-second);
-    font-weight: 400;
-    font-size: 35px;
-    line-height: 130%;
-    letter-spacing: 0.06em;
 }
 
 #about_text p {
     font-family: Arial;
-    font-weight: 400;
     font-size: 15px;
     line-height: 160%;
     color: var(--color-dark-third);
 }
 
+/* Pets */
+
+#pets {
+    background-color: var(--color-light);
+}
+
+#pets_content {
+    display: flex;
+    height: 697px;
+    margin: 80px 40px 100px 40px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#pets_content h3 {
+    text-align: center;
+}
+
+#slider {
+    margin: 60px 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#arrow {
+    margin-right: 8px;
+}
+
+#arrow2 {
+    margin-left: 8px;
+}
+
+.card {
+    border-radius: 9px;
+    width: 270px;
+    height: 435px;
+    background: var(--color-light-second);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 45px;
+}
+
+.card p {
+    font-family: Georgia;
+    font-size: 20px;
+    text-align: center;
+    color: var(--color-dark-second);
+}
+
+.pet_name {
+    margin-top: 30px;
+}
+
+#button_learn {
+    border: 2px solid var(--color-primary);
+    border-radius: 100px;
+    width: 187px;
+    height: 52px;
+    margin: 30px 41.5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+#button_learn p {
+    font-family: Georgia;
+    font-size: 17px;
+    text-align: center;
+    color: var(--color-dark);
+}
+
+#button_pets {
+    border-radius: 100px;
+    width: 261px;
+    height: 52px;
+    background: var(--color-primary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#button_pets {
+    color: var(--color-dark);font-family: Georgia;
+    font-size: 17px;
+}
