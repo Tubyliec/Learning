@@ -370,3 +370,42 @@ nav ul li:first-child {
     color: var(--color-dark-fourth);
     width: 380px;
 }
+
+/* Footer */
+
+footer {
+    display: flex;
+    background-image: url('../../assets/images/main/start-screen-background.png');
+    background: linear-gradient(90deg, rgba(91,72,58,1) 0%, rgba(38,36,37,1) 100%);
+}
+
+#footer_content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    grid-gap: 160px;
+    margin: 40px 40px 0 40px;
+}
+
+.footer_section {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    grid-gap: 32px;
+}
+
+.footer_row {
+    display: flex;
+    flex-direction: row;
+    grid-gap: 20px;
+    align-items: center;
+}
+
+footer h3 {
+    color: var(--color-second);
+}
+
+footer h4 {
+    color: var(--color-primary);
+}
