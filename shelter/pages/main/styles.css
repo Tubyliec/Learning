@@ -14,6 +14,7 @@
     --color-dark: #292929;
     --color-dark-second: #545454;
     --color-dark-third: #4c4c4c;
+    --color-dark-fourth: #b2b2b2;
     --color-light: #f6f6f6;
     --color-light-second: #fafafa;
 }
@@ -23,6 +24,20 @@ h3 {
     color: var(--color-dark-second);
     font-size: 35px;
     line-height: 130%;
+}
+
+h4 {
+    font-family: Georgia;
+    font-size: 20px;
+    line-height: 115%;
+    color: var(--color-dark-second);
+}
+
+h5 {
+    font-family: Georgia;
+    font-size: 15px;
+    line-height: 110%;
+    color: var(--color-dark-second);
 }
 
 .container {
@@ -136,24 +151,32 @@ nav ul li:first-child {
 
 /* About */
 
+#about {
+    background: var(--color-second);
+    display: flex;
+    justify-content: center;
+}
+
 #about_content {
     display: flex;
+    flex-direction: row;
     height: 408px;
     margin: 80px 40px 100px 40px;
-    justify-content: space-around;
+    justify-content: center;
+    grid-gap:120px;
+    align-items: center;
+    padding: 0 175px;
 }
 
 #about_image {
     width: 300px;
-    margin-left: 175px;
-    margin-right: 60px;
 }
 
 #about_text {
     display: flex;
     flex-direction: column;
-    min-width: 430px;
-    margin: 14px 175px 14px 60px;
+    height: 380px;
+    margin: 14px 0;
 }
 
 #about_text h3, #about_text p {
@@ -256,4 +279,94 @@ nav ul li:first-child {
 #button_pets {
     color: var(--color-dark);font-family: Georgia;
     font-size: 17px;
+}
+
+/* Help */
+
+#help {
+    display: flex;
+    flex-direction: column;
+}
+
+#help_content {
+    margin: 80px 40px 100px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#help_content h3 {
+    text-align: center;
+}
+
+#help_list {
+    margin: 60px 87px 0 87px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    grid-gap:120px;
+    justify-content: center;
+}
+
+.help_card {
+    height: 113px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.help_image {
+    width: 60px;
+    height: 60px;
+    margin: 0 11px 30px 11px;
+}
+
+/* Donation */
+
+#donation {
+    display: flex;
+    background: var(--color-light);
+}
+
+#donation_content {
+    margin: 80px auto 100px auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    grid-gap:20px;
+}
+
+#donation_image {
+    margin: 10px;
+}
+
+#donation_info {
+    height: 282px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    grid-gap: 20px;
+}
+
+#card {
+    display: flex;
+    flex-direction: row;
+    grid-gap: 15px;
+    background: var(--color-primary);
+    border-radius: 9px;
+    padding: 10px 15px;
+    align-items: center;
+    width: fit-content;
+}
+
+#donation_info p {
+    font-family: Arial, sans-serif;
+    font-style: italic;
+    font-size: 12px;
+    line-height: 150%;
+    color: var(--color-dark-fourth);
+    width: 380px;
 }
