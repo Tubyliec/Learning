@@ -393,6 +393,8 @@ footer {
     flex-direction: column;
     justify-content: flex-start;
     grid-gap: 32px;
+    margin-top: 16px;
+    margin-bottom: 60px;
 }
 
 .footer_row {

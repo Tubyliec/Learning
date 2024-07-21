@@ -50,7 +50,7 @@ h5 {
     src: url("../../assets/fonts/georgia/georgia-regular.ttf") format("ttf");
   }
 
-/* Start Screen */
+/* Header */
 
 header {
     display: flex;
@@ -95,32 +95,6 @@ nav li {
     color: var(--color-dark-second);
 }
 
-#welcome {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 60px 40px 0 40px;
-    height: 728px;
-}
-
-#start_screen h2 {
-    font-family: Georgia;
-    font-size: 44px;
-    line-height: 130%;
-    color: var(--color-second);
-    
-}
-
-#welcome_text p {
-    font-family: Arial;
-    font-size: 15px;
-    line-height: 160%;
-    color: var(--color-primary-dark);
-}
-
-#welcome_text p, h2 {
-    margin-bottom: 42px;
-}
 
 nav ul li:nth-child(3) {
     border-bottom: 3px var(--color-primary) solid;
@@ -146,15 +120,16 @@ nav ul li:nth-child(3) {
 
 #pets {
     background-color: var(--color-light);
+    display: flex;
 }
 
 #pets_content {
     display: flex;
-    height: 697px;
     margin: 80px 40px 100px 40px;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    grid-gap: 45px;
 }
 
 #pets_content h3 {
@@ -162,19 +137,13 @@ nav ul li:nth-child(3) {
 }
 
 #slider {
-    margin: 60px 0;
     display: flex;
     flex-direction: row;
-    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    grid-gap:40px;
 }
 
-#arrow {
-    margin-right: 8px;
-}
-
-#arrow2 {
-    margin-left: 8px;
-}
 
 .card {
     border-radius: 9px;
@@ -185,7 +154,6 @@ nav ul li:nth-child(3) {
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    margin: 0 45px;
 }
 
 .card p {
@@ -218,19 +186,22 @@ nav ul li:nth-child(3) {
     color: var(--color-dark);
 }
 
-#button_pets {
-    border-radius: 100px;
-    width: 261px;
+#button_area {
     height: 52px;
-    background: var(--color-primary);
     display: flex;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
+    grid-gap:20px;
 }
 
-#button_pets {
-    color: var(--color-dark);font-family: Georgia;
-    font-size: 17px;
+.button_navigation {
+    width: 52px;
+    height: 52px;
+    border: 2px solid var(--color-primary-dark);
+    border-radius: 100px;
+    align-content: center;
+    text-align: center;
 }
 
 /* Footer */
@@ -255,6 +226,8 @@ footer {
     flex-direction: column;
     justify-content: flex-start;
     grid-gap: 32px;
+    margin-top: 16px;
+    margin-bottom: 60px;
 }
 
 .footer_row {
