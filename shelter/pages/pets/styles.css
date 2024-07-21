@@ -7,6 +7,14 @@
     letter-spacing: 0.06em;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
+html a {
+    text-decoration: none;
+}
+
 :root {
     --color-primary: #f1cdb3;
     --color-primary-dark: #cdcdcd;
@@ -17,6 +25,18 @@
     --color-dark-fourth: #b2b2b2;
     --color-light: #f6f6f6;
     --color-light-second: #fafafa;
+}
+
+h1 {
+    font-family: Georgia;
+    color: var(--color-dark-second);
+    padding-bottom: 10px;
+    font-size: 32px;
+    line-height: 110%;
+}
+
+h1 a {
+    color: var(--color-dark-second);
 }
 
 h3 {
@@ -69,14 +89,6 @@ header {
     margin:0;
 }
 
-header h1 {
-    font-family: Georgia;
-    color: var(--color-dark-second);
-    padding-bottom: 10px;
-    font-size: 32px;
-    line-height: 110%;
-}
-
 #logo_phrase {
     font-family: Arial;
     color: var(--color-dark);
@@ -96,7 +108,22 @@ nav li {
 }
 
 
-nav ul li:nth-child(3) {
+nav ul li:nth-child(2) {
+    border-bottom: 3px var(--color-primary) solid;
+}
+
+nav li a {
+    color: var(--color-dark-second);
+}
+
+nav li a:hover {
+    color: var(--color-dark-second);
+    cursor: pointer;
+    font-size: 110%;
+}
+
+nav li a:active {
+    color: var(--color-primary);
     border-bottom: 3px var(--color-primary) solid;
 }
 
@@ -144,7 +171,6 @@ nav ul li:nth-child(3) {
     grid-gap:40px;
 }
 
-
 .card {
     border-radius: 9px;
     width: 270px;
@@ -167,7 +193,7 @@ nav ul li:nth-child(3) {
     margin-top: 30px;
 }
 
-#button_learn {
+.button_learn {
     border: 2px solid var(--color-primary);
     border-radius: 100px;
     width: 187px;
@@ -176,14 +202,20 @@ nav ul li:nth-child(3) {
     display: flex;
     align-items: center;
     justify-content: center;
-
-}
-
-#button_learn p {
     font-family: Georgia;
     font-size: 17px;
     text-align: center;
     color: var(--color-dark);
+    background: var(--color-light-second);
+}
+
+.card:hover {
+    outline: 2px solid var(--color-primary);
+}
+
+.card:hover button {
+    background: var(--color-primary);
+    cursor: pointer;
 }
 
 #button_area {
@@ -198,10 +230,30 @@ nav ul li:nth-child(3) {
 .button_navigation {
     width: 52px;
     height: 52px;
-    border: 2px solid var(--color-primary-dark);
+    border: 2px solid var(--color-primary);
+    background: var(--color-light-second);;
     border-radius: 100px;
     align-content: center;
     text-align: center;
+    color: var(--color-dark);
+}
+
+.button_navigation:disabled {
+    border: 2px solid var(--color-primary-dark);
+}
+
+.button_navigation:disabled h4 {
+    color: var(--color-primary-dark);
+}
+
+.button_navigation:hover {
+    background: var(--color-primary);
+    cursor: pointer;
+}
+
+.button_navigation:active {
+    background: var(--color-primary);
+    cursor: pointer;
 }
 
 /* Footer */
@@ -242,5 +294,9 @@ footer h3 {
 }
 
 footer h4 {
+    color: var(--color-primary);
+}
+
+footer a {
     color: var(--color-primary);
 }

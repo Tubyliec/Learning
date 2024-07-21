@@ -7,9 +7,14 @@
     letter-spacing: 0.06em;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 :root {
     --color-primary: #f1cdb3;
     --color-primary-dark: #cdcdcd;
+    --color-primary-light: #fddcc4;
     --color-second: #fff;
     --color-dark: #292929;
     --color-dark-second: #545454;
@@ -17,6 +22,18 @@
     --color-dark-fourth: #b2b2b2;
     --color-light: #f6f6f6;
     --color-light-second: #fafafa;
+}
+
+h1 {
+    font-family: Georgia;
+    color: var(--color-primary);
+    padding-bottom: 10px;
+    font-size: 32px;
+    line-height: 110%;
+}
+
+h1 a {
+    color: var(--color-primary);
 }
 
 h3 {
@@ -30,6 +47,9 @@ h4 {
     font-family: Georgia;
     font-size: 20px;
     line-height: 115%;
+    color: var(--color-dark-second);
+}
+h4 a {
     color: var(--color-dark-second);
 }
 
@@ -49,6 +69,11 @@ h5 {
     font-family: "Georgia";
     src: url("../../assets/fonts/georgia/georgia-regular.ttf") format("ttf");
   }
+
+  a {
+    text-decoration: none;
+}
+
 
 /* Start Screen */
 
@@ -76,14 +101,6 @@ header {
     margin:0;
 }
 
-#start_screen h1 {
-    font-family: Georgia;
-    color: var(--color-primary);
-    padding-bottom: 10px;
-    font-size: 32px;
-    line-height: 110%;
-}
-
 #logo_phrase {
     font-family: Arial;
     color: var(--color-second);
@@ -93,6 +110,11 @@ nav ul {
     display: flex;
 }
 
+nav ul li:first-child {
+    border-bottom: 3px var(--color-primary) solid;
+    cursor: default;
+}
+
 nav li {
     list-style: none;
     margin-left: 35px;
@@ -100,6 +122,21 @@ nav li {
     font-size: 15px;
     line-height: 160%;
     color: var(--color-primary-dark);
+}
+
+nav li a {
+    color: var(--color-primary-dark);
+}
+
+nav li a:hover {
+    color: var(--color-light-second);
+    cursor: pointer;
+    font-size: 110%;
+}
+
+nav li a:active {
+    color: var(--color-light-second);
+    border-bottom: 3px var(--color-primary) solid;
 }
 
 #welcome {
@@ -129,24 +166,30 @@ nav li {
     margin-bottom: 42px;
 }
 
-nav ul li:first-child {
-    border-bottom: 3px var(--color-primary) solid;
-}
-
 #button_items {
-    background-color: var(--color-primary);
-    border-radius: 100px;
     width: 207px;
     height: 52px;
-}
-
-#button_items p {
     border-radius: 100px;
     background-color: var(--color-primary);
     color: var(--color-dark);
     font-family: Georgia;
     font-size: 17px;
     padding: 15px 45px;
+    text-decoration: none;
+    border: none;
+}
+
+#button_items a {
+    color: var(--color-dark);
+}
+
+#button_items a:hover {
+    color: var(--color-dark);
+    background-color: var(--color-primary-light);
+}
+
+#button_items:hover {
+    background-color: var(--color-primary-light);
 }
 
 /* About */
@@ -216,12 +259,21 @@ nav ul li:first-child {
     align-items: center;
 }
 
-#arrow {
-    margin-right: 8px;
+.button_arrow {
+    border: 2px solid var(--color-primary);
+    border-radius: 100px;
+    background: var(--color-light);
+    width: 52px;
+    height: 52px;
 }
 
-#arrow2 {
-    margin-left: 8px;
+.card:hover {
+    outline: 2px solid var(--color-primary);
+}
+
+.card:hover button {
+    background: var(--color-primary);
+    cursor: pointer;
 }
 
 .card {
@@ -247,7 +299,7 @@ nav ul li:first-child {
     margin-top: 30px;
 }
 
-#button_learn {
+.button_learn {
     border: 2px solid var(--color-primary);
     border-radius: 100px;
     width: 187px;
@@ -256,29 +308,37 @@ nav ul li:first-child {
     display: flex;
     align-items: center;
     justify-content: center;
-
-}
-
-#button_learn p {
     font-family: Georgia;
     font-size: 17px;
     text-align: center;
     color: var(--color-dark);
+    background: var(--color-light-second);
 }
 
 #button_pets {
-    border-radius: 100px;
     width: 261px;
     height: 52px;
+    border-radius: 100px;
+    padding: 15px 45px;
     background: var(--color-primary);
     display: flex;
     justify-content: center;
     align-items: center;
+    border: none;
 }
 
-#button_pets {
-    color: var(--color-dark);font-family: Georgia;
+#button_pets a{
+    color: var(--color-dark);
+    font-family: Georgia;
     font-size: 17px;
+}
+
+#button_pets a:hover {
+    color: var(--color-dark);
+}
+
+#button_pets:hover {
+    background-color: var(--color-primary-light);
 }
 
 /* Help */
@@ -409,5 +469,9 @@ footer h3 {
 }
 
 footer h4 {
+    color: var(--color-primary);
+}
+
+footer a {
     color: var(--color-primary);
 }
