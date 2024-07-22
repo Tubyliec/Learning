@@ -174,9 +174,10 @@ nav li a:active {
     color: var(--color-dark);
     font-family: Georgia;
     font-size: 17px;
-    padding: 15px 45px;
     text-decoration: none;
     border: none;
+    align-content: center;
+    text-align: center;
 }
 
 #button_items a {
