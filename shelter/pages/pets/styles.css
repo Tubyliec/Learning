@@ -242,7 +242,7 @@ nav li a:active {
     border: 2px solid var(--color-primary-dark);
 }
 
-.button_navigation:disabled h4 {
+.button_navigation:disabled {
     color: var(--color-primary-dark);
 }
 
