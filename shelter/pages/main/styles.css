@@ -104,6 +104,7 @@ header {
 #logo_phrase {
     font-family: Arial;
     font-size: 13px;
+    letter-spacing: 0.01em;
     color: var(--color-second);
 }
 
@@ -142,8 +143,7 @@ nav li a:active {
 
 #welcome {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    grid-gap: 42px;
     margin: 60px 40px 0 40px;
     height: 728px;
 }
@@ -157,6 +157,7 @@ nav li a:active {
 }
 
 #welcome_text {
+    margin-top: 163px;
     display: flex;
     flex-direction: column;
     grid-gap: 42px;
