@@ -103,11 +103,13 @@ header {
 
 #logo_phrase {
     font-family: Arial;
+    font-size: 13px;
     color: var(--color-second);
 }
 
 nav ul {
     display: flex;
+    grid-gap: 35px;
 }
 
 nav ul li:first-child {
@@ -117,7 +119,6 @@ nav ul li:first-child {
 
 nav li {
     list-style: none;
-    margin-left: 35px;
     font-family: Arial;
     font-size: 15px;
     line-height: 160%;
@@ -155,15 +156,17 @@ nav li a:active {
     
 }
 
+#welcome_text {
+    display: flex;
+    flex-direction: column;
+    grid-gap: 42px;
+}
+
 #welcome_text p {
     font-family: Arial;
     font-size: 15px;
     line-height: 160%;
     color: var(--color-primary-dark);
-}
-
-#welcome_text p, h2 {
-    margin-bottom: 42px;
 }
 
 #button_items {
