@@ -373,6 +373,7 @@ nav li a:active {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 1200px;
 }
 
 #help_content h3 {
@@ -384,7 +385,8 @@ nav li a:active {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    grid-gap:120px;
+    grid-gap: 120px;
+    row-gap: 55px;
     justify-content: center;
 }
 
