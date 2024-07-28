@@ -3,7 +3,6 @@
 * {
     margin: 0;
     padding: 0;
-    font-weight: 400;
 }
 
 html {
@@ -27,6 +26,7 @@ h1 {
     font-family: Georgia;
     color: var(--color-primary);
     padding-bottom: 10px;
+    font-weight: 400;
     font-size: 32px;
     line-height: 110%;
     letter-spacing: 0.06em;
@@ -63,6 +63,7 @@ h5 {
 .container {
     display: flex;
     flex-direction: column;
+    max-width: 1280px;
 }
 
 @font-face {
@@ -70,10 +71,10 @@ h5 {
     src: url("../../assets/fonts/georgia/georgia-regular.ttf") format("ttf");
   }
 
-  @font-face {
+@font-face {
     font-family: "Arial";
     src: url("../../assets/fonts/arial/arial-regular.ttf") format("ttf");
-  }
+}
 
 
   a {
@@ -270,6 +271,13 @@ nav li a:active {
     display: flex;
     flex-direction: row;
     align-items: center;
+    grid-gap: 53px;
+}
+
+#slider_body {
+    display: flex;
+    flex-direction: row;
+    grid-gap: 90px;
 }
 
 .button_arrow {
@@ -298,7 +306,6 @@ nav li a:active {
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    margin: 0 45px;
 }
 
 .card p {
@@ -332,7 +339,6 @@ nav li a:active {
     width: 261px;
     height: 52px;
     border-radius: 100px;
-    padding: 15px 45px;
     background: var(--color-primary);
     display: flex;
     justify-content: center;
