@@ -107,11 +107,11 @@ header {
 
 nav ul {
     display: flex;
+    gap: 35px;
 }
 
 nav li {
     list-style: none;
-    margin-left: 35px;
     font-family: Arial;
     font-size: 15px;
     line-height: 160%;
@@ -168,7 +168,7 @@ nav li a:active {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    grid-gap: 45px;
+    gap: 60px;
 }
 
 #pets_content h3 {
@@ -180,7 +180,8 @@ nav li a:active {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-    grid-gap:40px;
+    gap:40px;
+    row-gap: 30px;
 }
 
 .card {
@@ -237,7 +238,7 @@ nav li a:active {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    grid-gap: 20px;
+    gap: 20px;
 }
 
 .button_navigation {
