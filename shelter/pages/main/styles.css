@@ -81,11 +81,12 @@ h5 {
 .container {
     display: flex;
     flex-direction: column;
+}
+
+section, footer {
     max-width: 1280px;
     margin: 0 auto;
 }
-
-
 
   a {
     text-decoration: none;
@@ -97,6 +98,9 @@ h5 {
 #start_screen {
     display: flex;
     flex-direction: column;
+}
+
+#start_wrapper {
     background-image: url('../../assets/images/main/start-screen-background.png');
     background: linear-gradient(90deg, rgba(91,72,58,1) 0%, rgba(38,36,37,1) 100%);
 }
@@ -260,7 +264,7 @@ nav li a:active {
 
 /* Pets */
 
-#pets {
+#pets_wrapper {
     background-color: var(--color-light);
 }
 
@@ -426,8 +430,11 @@ nav li a:active {
 
 #donation {
     display: flex;
-    background: var(--color-light);
     height: 462px;
+}
+
+#donation_wrapper {
+    background: var(--color-light);
 }
 
 #donation_content {
@@ -476,6 +483,9 @@ nav li a:active {
 
 footer {
     display: flex;
+}
+
+#footer_wrapper {
     background-image: url('../../assets/images/main/start-screen-background.png');
     background: linear-gradient(90deg, rgba(91,72,58,1) 0%, rgba(38,36,37,1) 100%);
 }
