@@ -477,7 +477,7 @@ footer {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    grid-gap: 130px;
+    grid-gap: 160px;
     margin: 40px 40px 0 40px;
 }
 
@@ -488,6 +488,7 @@ footer {
     grid-gap: 32px;
     margin-top: 14px;
     margin-bottom: 60px;
+    max-width: 300px;
 }
 
 .footer_row {
