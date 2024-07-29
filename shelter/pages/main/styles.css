@@ -64,7 +64,7 @@ h4 {
     font-size: 20px;
     line-height: 115%;
     color: var(--color-dark-second);
-    letter-spacing: 0.01em;
+    letter-spacing: 0.06em;;
 }
 h4 a {
     color: var(--color-dark-second);
@@ -380,6 +380,10 @@ nav li a:active {
     flex-direction: column;
 }
 
+#help h4 {
+    letter-spacing: 0.01em;
+}
+
 #help_content {
     margin: 80px 40px 100px 40px;
     display: flex;
@@ -478,7 +482,6 @@ footer {
 #footer_content {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
     gap: 160px;
     margin: 40px 40px 0 40px;
 }
@@ -486,7 +489,7 @@ footer {
 #footer_info {
     display: flex;
     flex-direction: row;
-    gap: 130px;
+    gap: 140px;
 }
 
 .footer_section {
@@ -516,6 +519,7 @@ footer h3 {
 
 footer h4 {
     color: var(--color-primary);
+    
 }
 
 footer a {
