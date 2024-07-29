@@ -477,8 +477,8 @@ footer {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    grid-gap: 140px;
-    margin: 38px 40px 0 40px;
+    grid-gap: 130px;
+    margin: 40px 40px 0 40px;
 }
 
 .footer_section {
