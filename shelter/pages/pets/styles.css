@@ -29,10 +29,12 @@ html a {
 
 h1 {
     font-family: Georgia;
-    color: var(--color-dark-second);
+    color: var(--color-primary);
     padding-bottom: 10px;
+    font-weight: 400;
     font-size: 32px;
     line-height: 110%;
+    letter-spacing: 0.06em;
 }
 
 h1 a {
@@ -51,6 +53,20 @@ h4 {
     font-size: 20px;
     line-height: 115%;
     color: var(--color-dark-second);
+}h3 {
+    font-family: Georgia;
+    color: var(--color-dark-second);
+    font-size: 35px;
+    line-height: 130%;
+    letter-spacing: 0.1em;
+}
+
+h4 {
+    font-family: Georgia;
+    font-size: 20px;
+    line-height: 115%;
+    color: var(--color-dark-second);
+    letter-spacing: 0.01em;
 }
 
 h5 {
@@ -94,6 +110,9 @@ header {
 #logo_phrase {
     font-family: Arial;
     color: var(--color-dark);
+    font-size: 13px;
+    letter-spacing: 0.1em;
+    padding-left: 4px;
 }
 
 nav ul {
@@ -206,6 +225,7 @@ nav li a:active {
     justify-content: center;
     font-family: Georgia;
     font-size: 17px;
+    letter-spacing: 0.1em;
     text-align: center;
     color: var(--color-dark);
     background: var(--color-light-second);
@@ -270,7 +290,6 @@ footer {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: center;
     grid-gap: 160px;
     margin: 40px 40px 0 40px;
 }
@@ -278,7 +297,7 @@ footer {
 .footer_section {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-around;
     grid-gap: 32px;
     margin-top: 16px;
     margin-bottom: 60px;
@@ -293,6 +312,9 @@ footer {
 
 footer h3 {
     color: var(--color-second);
+    font-size: 35px;
+    line-height: 130%;
+    letter-spacing: 0.06em;
 }
 
 footer h4 {
