@@ -79,7 +79,8 @@ h5 {
 .container {
     display: flex;
     flex-direction: column;
-    width: 1280px;
+    max-width: 1280px;
+    margin: 0 auto;
 }
 
 @font-face {
