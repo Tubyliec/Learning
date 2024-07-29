@@ -498,6 +498,10 @@ footer {
 
 footer h3 {
     color: var(--color-second);
+    font-weight: 400;
+    font-size: 35px;
+    line-height: 130%;
+    letter-spacing: 0.06em;
 }
 
 footer h4 {
