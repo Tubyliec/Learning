@@ -67,7 +67,15 @@ h5 {
 .container {
     display: flex;
     flex-direction: column;
+}
+
+section, footer {
     max-width: 1280px;
+    margin: 0 auto;
+}
+
+#header_wrapper {
+    width: 1280px;
     margin: 0 auto;
 }
 
@@ -162,8 +170,10 @@ nav li a:active {
 /* Pets */
 
 #pets {
-    background-color: var(--color-light);
     display: flex;
+}
+#pets_wrapper {
+    background-color: var(--color-light);
 }
 
 #pets_content {
@@ -278,6 +288,10 @@ nav li a:active {
 
 footer {
     display: flex;
+    
+}
+
+#footer_wrapper {
     background-image: url('../../assets/images/main/start-screen-background.png');
     background: linear-gradient(90deg, rgba(91,72,58,1) 0%, rgba(38,36,37,1) 100%);
 }
