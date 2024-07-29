@@ -56,7 +56,7 @@ h3 {
     color: var(--color-dark-second);
     font-size: 35px;
     line-height: 130%;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.06em;
 }
 
 h4 {
@@ -476,8 +476,8 @@ footer {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    grid-gap: 160px;
-    margin: 40px 40px 0 40px;
+    grid-gap: 158px;
+    margin: 38px 40px 0 40px;
 }
 
 .footer_section {
