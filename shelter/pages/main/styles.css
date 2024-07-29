@@ -127,7 +127,7 @@ header {
 
 nav ul {
     display: flex;
-    grid-gap: 35px;
+    gap: 35px;
 }
 
 nav ul li:first-child {
@@ -161,7 +161,7 @@ nav li a:active {
 
 #welcome {
     display: flex;
-    grid-gap: 42px;
+    gap: 42px;
     margin: 60px 40px 0 40px;
     height: 728px;
 }
@@ -178,7 +178,7 @@ nav li a:active {
     margin-top: 163px;
     display: flex;
     flex-direction: column;
-    grid-gap: 42px;
+    gap: 42px;
 }
 
 #welcome_text p {
@@ -230,7 +230,7 @@ nav li a:active {
     height: 408px;
     margin: 80px 40px 100px 40px;
     justify-content: center;
-    grid-gap:120px;
+    gap:120px;
     align-items: center;
     padding: 0 175px;
 }
@@ -281,13 +281,13 @@ nav li a:active {
     display: flex;
     flex-direction: row;
     align-items: center;
-    grid-gap: 53px;
+    gap: 53px;
 }
 
 #slider_body {
     display: flex;
     flex-direction: row;
-    grid-gap: 90px;
+    gap: 90px;
 }
 
 .button_arrow {
@@ -398,7 +398,7 @@ nav li a:active {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    grid-gap: 120px;
+    gap: 120px;
     row-gap: 55px;
     justify-content: center;
 }
@@ -422,6 +422,7 @@ nav li a:active {
 #donation {
     display: flex;
     background: var(--color-light);
+    height: 462px;
 }
 
 #donation_content {
@@ -430,11 +431,12 @@ nav li a:active {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    grid-gap:20px;
+    gap:20px;
 }
 
 #donation_image {
     margin: 10px;
+
 }
 
 #donation_info {
@@ -442,13 +444,13 @@ nav li a:active {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    grid-gap: 20px;
+    gap: 20px;
 }
 
 #card {
     display: flex;
     flex-direction: row;
-    grid-gap: 15px;
+    gap: 15px;
     background: var(--color-primary);
     border-radius: 9px;
     padding: 10px 15px;
@@ -477,15 +479,21 @@ footer {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    grid-gap: 160px;
+    gap: 160px;
     margin: 40px 40px 0 40px;
+}
+
+#footer_info {
+    display: flex;
+    flex-direction: row;
+    gap: 130px;
 }
 
 .footer_section {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    grid-gap: 32px;
+    gap: 32px;
     margin-top: 14px;
     margin-bottom: 60px;
     max-width: 300px;
@@ -494,7 +502,7 @@ footer {
 .footer_row {
     display: flex;
     flex-direction: row;
-    grid-gap: 20px;
+    gap: 20px;
     align-items: center;
 }
 
