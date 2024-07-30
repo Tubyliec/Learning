@@ -141,14 +141,15 @@ nav li a {
 }
 
 nav li a:hover {
-    color: var(--color-dark-second);
+    color: var(--color-dark-third);
     cursor: pointer;
-    font-size: 110%;
+    transition: 2s;
 }
 
 nav li a:active {
     color: var(--color-primary);
     border-bottom: 3px var(--color-primary) solid;
+    transition: 2s;
 }
 
 #button_items {
@@ -259,7 +260,7 @@ nav li a:active {
     width: 52px;
     height: 52px;
     border: 2px solid var(--color-primary);
-    background: var(--color-light-second);;
+    background: var(--color-light-second);
     border-radius: 100px;
     align-content: center;
     text-align: center;
@@ -277,6 +278,11 @@ nav li a:active {
 .button_navigation:hover {
     background: var(--color-primary);
     cursor: pointer;
+}
+
+.button_navigation:disabled:hover {
+    background: var(--color-light-second);
+    cursor: default;
 }
 
 .button_navigation:active {
