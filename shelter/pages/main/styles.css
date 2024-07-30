@@ -156,12 +156,13 @@ nav li a {
 nav li a:hover {
     color: var(--color-light-second);
     cursor: pointer;
-    font-size: 110%;
+    transition: 2s;
 }
 
 nav li a:active {
     color: var(--color-light-second);
     border-bottom: 3px var(--color-primary) solid;
+    transition: 2s;
 }
 
 #welcome {
