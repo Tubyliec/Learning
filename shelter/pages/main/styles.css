@@ -170,10 +170,6 @@ nav li a:active {
     margin: 60px 40px 0 40px;
 }
 
-#welcome_image {
-    display: flex;
-}
-
 #start_screen h2 {
     font-family: Georgia;
     font-size: 44px;
@@ -194,6 +190,10 @@ nav li a:active {
     font-size: 15px;
     line-height: 160%;
     color: var(--color-primary-dark);
+}
+
+#welcome_image {
+    display: flex;
 }
 
 #button_items {
@@ -225,7 +225,10 @@ nav li a:active {
 }
 
 @media (max-width: 900px) {
-    
+    header {
+        margin: 30px;
+    }
+
     #welcome {
         flex-direction: column;
         gap: 100px;
@@ -236,6 +239,16 @@ nav li a:active {
     #welcome_text {
         margin: 0 55px;
     }
+
+    #welcome_image img {
+        width: 569px;
+        margin-left: 70px;
+    }
+
+    #button_items {
+        align-self: center;
+    }
+
 }
 
 /* About */
@@ -297,7 +310,7 @@ nav li a:active {
 #pets_content {
     display: flex;
     height: 697px;
-    margin: 85px 40px 95px 40px;
+    margin: 83px 40px 95px 40px;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -559,7 +572,7 @@ footer {
     display: flex;
     flex-direction: row;
     gap: 160px;
-    margin: 40px 40px 0 40px;
+    margin: 35px 40px 0 40px;
 }
 
 #footer_info {
