@@ -92,13 +92,6 @@ section, footer {
     text-decoration: none;
 }
 
-@media (max-width: 768px) {
-    section, footer {
-        max-width: 768px;
-        margin: 0 auto;
-    }
-}
-
 /* Start Screen */
 
 #start_screen {
@@ -175,7 +168,10 @@ nav li a:active {
     display: flex;
     gap: 42px;
     margin: 60px 40px 0 40px;
-    height: 728px;
+}
+
+#welcome_image {
+    display: flex;
 }
 
 #start_screen h2 {
@@ -228,6 +224,20 @@ nav li a:active {
     background-color: var(--color-primary-light);
 }
 
+@media (max-width: 900px) {
+    
+    #welcome {
+        flex-direction: column;
+        gap: 100px;
+        margin: 30px 100px 0 100px;
+        align-items: center;
+    }
+
+    #welcome_text {
+        margin: 0 55px;
+    }
+}
+
 /* About */
 
 #about {
@@ -239,7 +249,6 @@ nav li a:active {
 #about_content {
     display: flex;
     flex-direction: row;
-    height: 408px;
     margin: 80px 40px 100px 40px;
     justify-content: center;
     gap:120px;
@@ -267,6 +276,16 @@ nav li a:active {
     font-size: 15px;
     line-height: 160%;
     color: var(--color-dark-third);
+}
+
+@media (max-width: 900px) {
+    
+    #about_content {
+        flex-direction: column-reverse;
+        gap:80px;
+        padding: 0;
+        margin: 80px 165px 100px 165px;
+    }
 }
 
 /* Pets */
@@ -385,6 +404,21 @@ nav li a:active {
     background-color: var(--color-primary-light);
 }
 
+@media (max-width: 900px) {
+    
+    #woody {
+        display: none;
+    }
+
+    #slider {
+        gap: 12px;
+    }
+
+    #slider_body {
+        gap: 40px;
+    }
+}
+
 /* Help */
 
 #help {
@@ -402,7 +436,6 @@ nav li a:active {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 1200px;
 }
 
 #help_content h3 {
@@ -433,11 +466,28 @@ nav li a:active {
     height: 60px;
 }
 
+@media (max-width: 900px) {
+    #help_list {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 60px;
+        margin: 0;
+    }
+    #help_content {
+        margin: 80px 69px 100px 69px;
+        gap: 60px;
+    }
+
+    .help_card {
+        height: 113px;
+        width: 170px;
+    }
+}
+
 /* Donation */
 
 #donation {
     display: flex;
-    height: 462px;
 }
 
 #donation_wrapper {
@@ -484,6 +534,14 @@ nav li a:active {
     line-height: 150%;
     color: var(--color-dark-fourth);
     width: 380px;
+}
+
+@media (max-width: 900px) {
+    
+    #donation_content {
+        display: flex;
+        flex-direction: column-reverse;
+    }
 }
 
 /* Footer */
@@ -542,4 +600,15 @@ footer h4 {
 
 footer a {
     color: var(--color-primary);
+}
+
+@media (max-width: 900px) {
+    
+    #footer_content {
+        display: flex;
+        flex-direction: column;
+        gap: 65px;
+        margin: 30px 30px 0 30px;
+        align-items: center;
+    }
 }
