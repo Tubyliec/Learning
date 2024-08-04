@@ -193,7 +193,7 @@ nav li a:active {
 }
 
 #welcome_image {
-    display: flex;
+    overflow: visible;
 }
 
 #button_items {
@@ -242,7 +242,7 @@ nav li a:active {
 
     #welcome_image img {
         width: 569px;
-        margin-left: 70px;
+        margin-left: 140px;
     }
 
     #button_items {
@@ -297,7 +297,11 @@ nav li a:active {
         flex-direction: column-reverse;
         gap:80px;
         padding: 0;
-        margin: 80px 165px 100px 165px;
+        margin: 80px 165px 95px 165px;
+    }
+
+    #about_text {
+        margin: 0;
     }
 }
 
@@ -310,7 +314,7 @@ nav li a:active {
 #pets_content {
     display: flex;
     height: 697px;
-    margin: 83px 40px 95px 40px;
+    margin: 80px 40px 95px 40px;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -429,6 +433,10 @@ nav li a:active {
 
     #slider_body {
         gap: 40px;
+    }
+
+    #pets_content {
+        margin: 80px 30px 100px 30px;
     }
 }
 
@@ -572,7 +580,7 @@ footer {
     display: flex;
     flex-direction: row;
     gap: 160px;
-    margin: 35px 40px 0 40px;
+    margin: 37px 40px 0 40px;
 }
 
 #footer_info {
