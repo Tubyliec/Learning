@@ -92,6 +92,12 @@ section, footer {
     text-decoration: none;
 }
 
+@media (max-width: 768px) {
+    section, footer {
+        max-width: 768px;
+        margin: 0 auto;
+    }
+}
 
 /* Start Screen */
 
