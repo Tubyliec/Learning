@@ -192,9 +192,6 @@ nav li a:active {
     color: var(--color-primary-dark);
 }
 
-#welcome_image {
-    overflow: visible;
-}
 
 #button_items {
     width: 207px;
@@ -237,10 +234,10 @@ nav li a:active {
     }
 
     #welcome_text {
-        margin: 0 55px;
+        margin: 0 54px 0 55px;
     }
 
-    #welcome_image img {
+    #welcome img {
         width: 569px;
         margin-left: 140px;
     }
@@ -301,7 +298,7 @@ nav li a:active {
     }
 
     #about_text {
-        margin: 0;
+        margin: 0 3px;
     }
 }
 
@@ -492,6 +489,7 @@ nav li a:active {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         grid-gap: 60px;
+        row-gap: 55px;
         margin: 0;
     }
     #help_content {
@@ -562,6 +560,10 @@ nav li a:active {
     #donation_content {
         display: flex;
         flex-direction: column-reverse;
+        margin: 80px auto 95px auto;
+    }
+    #donation_image {
+        margin: 0;
     }
 }
 
