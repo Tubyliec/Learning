@@ -561,6 +561,7 @@ nav li a:active {
         display: flex;
         flex-direction: column-reverse;
         margin: 80px auto 95px auto;
+        gap: 60px;
     }
     #donation_image {
         margin: 0;
@@ -631,7 +632,18 @@ footer a {
         display: flex;
         flex-direction: column;
         gap: 65px;
-        margin: 30px 30px 0 30px;
+        margin: 20px 30px 0 30px;
         align-items: center;
+    }
+    #footer_info {
+        display: flex;
+        flex-direction: row;
+        gap: 40px;
+        margin: 0 34px;
+    }
+    .footer_section {
+        gap: 30px;
+        margin-top: 10px;
+        margin-bottom: 0;
     }
 }
