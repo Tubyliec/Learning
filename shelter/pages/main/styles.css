@@ -201,21 +201,21 @@ nav li a:active {
 .burger::before {
     top: 0;
     box-shadow: 0 10px 0 var(--color-primary);
-    transition: box-shadow .3s .15s, top .3s .15s, transform .3s;
+    transition: box-shadow .4s .10s, top .4s .10s, transform .4s;
 }
 .burger::after {
     bottom: 0;
-    transition: bottom .3s .15s, transform .3s;
+    transition: bottom .4s .10s, transform .4s;
 }
 .burger-menu:checked + .burger::before {
     top: 10px;
     transform: rotate(90deg);
-    transition: box-shadow .15s, top .3s, transform .3s .15s;
+    transition: box-shadow .10s, top .4s, transform .4s .10s;
 }
 .burger-menu:checked + .burger::after {
     bottom: 10px;
     transform: translateX(10px) rotate(90deg);
-    transition: box-shadow .15s, bottom .3s, transform .3s .15s;
+    transition: box-shadow .10s, bottom .4s, transform .4s .10s;
 }
 
 #welcome {
