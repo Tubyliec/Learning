@@ -75,7 +75,7 @@ section, footer {
 }
 
 #header_wrapper {
-    width: 1280px;
+    width: 100%;
     margin: 0 auto;
 }
 
@@ -88,6 +88,12 @@ section, footer {
 @font-face {
     font-family: "Arial";
     src: url("../../assets/fonts/arial/arial-regular.ttf") format("ttf");
+}
+
+@media (max-width: 349px) {
+    h3 {
+        font-size: 25px;
+    }
 }
 
 /* Header */
@@ -128,7 +134,7 @@ nav li {
     font-size: 15px;
     line-height: 160%;
     color: var(--color-dark-second);
-    letter-spacing: 0px;
+    letter-spacing: 0.06px;
 }
 
 
@@ -152,6 +158,54 @@ nav li a:active {
     transition: 2s;
 }
 
+.menu {
+    display: none;
+}
+
+.burger-menu {
+    position: absolute;
+    visibility: hidden;
+}
+.burger {
+    cursor: pointer;
+    display: block;
+    position: relative;
+    border: none;
+    background: transparent;
+    width: 30px;
+    height: 22px;
+    
+}
+.burger::before,
+.burger::after {
+    content: '';
+    left: 0;
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: var(--color-dark-second);
+}
+.burger::before {
+    top: 0;
+    box-shadow: 0 10px 0 var(--color-dark-second);
+    transition: box-shadow .4s .10s, top .4s .10s, transform .4s;
+}
+.burger::after {
+    bottom: 0;
+    transition: bottom .4s .10s, transform .4s;
+}
+.burger-menu:checked + .burger::before {
+    top: 10px;
+    transform: rotate(90deg);
+    transition: box-shadow .10s, top .4s, transform .4s .10s;
+}
+.burger-menu:checked + .burger::after {
+    bottom: 10px;
+    transform: translateX(10px) rotate(90deg);
+    transition: box-shadow .10s, bottom .4s, transform .4s .10s;
+}
+
 #button_items {
     background-color: var(--color-primary);
     border-radius: 100px;
@@ -167,6 +221,28 @@ nav li a:active {
     font-size: 17px;
     padding: 15px 45px;
 }
+
+@media (min-width: 701px) and (max-width: 950px) {
+    header {
+        margin: 30px;
+    }
+
+}
+
+@media (max-width: 767px) {
+    #nav_main {
+        display: none;
+    }
+
+    .menu {
+        display: block;
+    }
+    
+    header {
+        margin: 30px 20px;
+    }
+}
+
 
 /* Pets */
 
@@ -290,6 +366,42 @@ nav li a:active {
     cursor: pointer;
 }
 
+@media (min-width: 701px) and (max-width: 950px) {
+    #scarlet, #freddie {
+        display: none;
+    }
+    #pets_content {
+        gap: 30px;
+        margin: 80px 40px 75px 40px;
+    }
+    #button_area {
+        margin-top: 10px;
+    }
+}
+
+@media (max-width: 400px) {
+    #button_area {
+        gap: 10px;
+    }
+}
+
+@media (max-width: 350px) {
+    #pets_content {
+        margin: 42px 0 45px 0;  
+        width: 100%; 
+        gap: 40px;
+    }
+
+    #slider {
+        flex-direction: column;
+    }
+
+    #scarlet, #freddie, #sophia, #timmy, #charly {
+        display: none;
+    }
+    
+}
+
 /* Footer */
 
 footer {
@@ -346,4 +458,121 @@ footer h4 {
 
 footer a {
     color: var(--color-primary);
+}
+
+@media (min-width: 750px) and (max-width: 1030px) {
+    footer {
+        justify-content: center;
+    }
+
+    #footer_content {
+        display: flex;
+        flex-direction: column;
+        gap: 65px;
+        margin: 20px 30px 0 30px;
+        align-items: center;
+    }
+    #footer_info {
+        display: flex;
+        flex-direction: row;
+        gap: 40px;
+        margin: 0 34px;
+    }
+    .footer_section {
+        gap: 30px;
+        margin-top: 10px;
+        margin-bottom: 0;
+    }
+}
+
+@media (min-width: 350px) and (max-width: 749px) {
+    footer {
+        justify-content: center;
+    }
+    footer h3 {
+        font-size: 25px;
+        text-align: center;
+    }
+    footer h4 {
+        font-size: 20px;
+    }
+    .footer_section {
+        align-items: center;
+        gap: 37px;
+    }
+    #footer_content {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        margin: 0;
+        margin-top: 20px;
+        align-items: center;
+    }
+    #footer_info {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+        margin: 0;
+    }
+
+    #footer_image img {
+        width: 260px;
+    }
+
+    #contacts {
+        margin: 10px 34px;
+    }
+    #locations {
+        margin: 0 10px 0 10px;
+        align-items: flex-start;
+    }
+
+    #locations h3 {
+        margin: 0 15px;
+    }
+}
+
+@media (max-width: 349px) {
+    footer h3 {
+        font-size: 25px;
+        text-align: center;
+    }
+    footer h4 {
+        font-size: 20px;
+    }
+    .footer_section {
+        align-items: center;
+        gap: 37px;
+    }
+    #footer_content {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        margin: 0;
+        margin-top: 20px;
+        align-items: center;
+    }
+    #footer_info {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+        margin: 0;
+    }
+
+    #footer_image img {
+        width: 260px;
+    }
+
+    #contacts {
+        margin: 10px 34px;
+    }
+    #locations {
+        margin: 0 10px 0 10px;
+        align-items: flex-start;
+    }
+
+    #locations h3 {
+        margin: 0 15px;
+    }
+
 }
