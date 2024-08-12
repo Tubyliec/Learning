@@ -485,7 +485,7 @@ footer a {
     }
 }
 
-@media (min-width: 350px) and (max-width: 749px) {
+@media (min-width: 350px) and (max-width: 750px) {
     footer {
         justify-content: center;
     }
@@ -523,7 +523,7 @@ footer a {
         margin: 10px 34px;
     }
     #locations {
-        margin: 0 10px 0 10px;
+        margin: 10px 34px;
         align-items: flex-start;
     }
 
