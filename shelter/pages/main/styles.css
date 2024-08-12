@@ -275,7 +275,7 @@ nav li a:active {
     background-color: var(--color-primary-light);
 }
 
-@media (min-width: 701px) and (max-width: 950px) {
+@media (min-width: 715px) and (max-width: 1000px) {
     header {
         margin: 30px;
     }
@@ -312,7 +312,7 @@ nav li a:active {
     }
 }
 
-@media (max-width: 700px) {
+@media (max-width: 715px) {
     header {
         margin: 30px 20px;
     }
@@ -382,7 +382,7 @@ nav li a:active {
     color: var(--color-dark-third);
 }
 
-@media (min-width: 701px) and (max-width: 950px) {
+@media (min-width: 701px) and (max-width: 1000px) {
     
     #about_content {
         flex-direction: column-reverse;
@@ -567,7 +567,7 @@ nav li a:active {
     }
 }
 
-@media (min-width:451px) and (max-width: 714px) {
+@media (min-width:451px) and (max-width: 715px) {
     #woody {
         display: none;
     }
@@ -718,7 +718,7 @@ nav li a:active {
     height: 60px;
 }
 
-@media (min-width: 750px) and (max-width: 900px) {
+@media (min-width: 768px) and (max-width: 900px) {
     #help_list {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
@@ -739,7 +739,7 @@ nav li a:active {
 }
 
 
-@media (max-width: 749px) {
+@media (max-width: 767px) {
     #help_list {
         display: grid;
         grid-template-columns: repeat(2, 130px);
@@ -821,7 +821,7 @@ nav li a:active {
     width: 380px;
 }
 
-@media (min-width: 530px) and (max-width: 900px) {
+@media (min-width: 530px) and (max-width: 1000px) {
     
     #donation_content {
         display: flex;
@@ -959,7 +959,7 @@ footer a {
     }
 }
 
-@media (min-width: 350px) and (max-width: 749px) {
+@media (min-width: 350px) and (max-width: 750px) {
     footer {
         justify-content: center;
     }
@@ -997,8 +997,8 @@ footer a {
         margin: 10px 34px;
     }
     #locations {
-        margin: 0 10px 0 10px;
         align-items: flex-start;
+        margin: 10px 34px;
     }
 
     #locations h3 {
@@ -1006,7 +1006,7 @@ footer a {
     }
 }
 
-@media (max-width: 349px) {
+@media (max-width: 350px) {
     footer h3 {
         font-size: 25px;
         text-align: center;
