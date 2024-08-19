@@ -473,6 +473,11 @@ nav li a:active {
     height: 52px;
 }
 
+.button_arrow:hover {
+    background: var(--color-primary);
+    cursor: pointer;
+}
+
 .card:hover {
     outline: 2px solid var(--color-primary);
 }
