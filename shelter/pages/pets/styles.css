@@ -26,6 +26,10 @@ html a {
     --color-light-second: #fafafa;
 }
 
+body.no_scroll {
+    overflow: hidden;
+}
+
 h1 {
     font-family: Georgia;
     color: var(--color-primary);
@@ -229,13 +233,48 @@ nav li a:active {
 
 }
 
-@media (max-width: 767px) {
+@media (max-width: 767.9px) {
     #nav_main {
-        display: none;
+        position: absolute;
+        top: 0;
+        right: -350px;
+        background: var(--color-light);
+        height: 100%;
+        width: 320px;
+        transition: 1s;
+        z-index: 2;
+    }
+
+    #nav_main.active {
+        right: 0;
+        transition: 1s;
+    }
+
+    .navigation_background.active {
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        position: fixed;
+        background-color: var(--color-dark);
+        opacity: 0.8;
+        z-index: 1;
+    }
+
+    #nav_main ul {
+        flex-direction: column;
+        padding: 248px 38px 0 38px;
+        background: var(--color-light);
+    }
+
+    #nav_main li {
+        font-size: 32px;
+        letter-spacing: 0;
     }
 
     .menu {
         display: block;
+        z-index: 3;
     }
     
     header {
