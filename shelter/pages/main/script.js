@@ -1,32 +1,32 @@
 /* Burger menu */
 
-const burgerMenu = document.querySelector('#nav_main');
-const burgerIcon = document.querySelector('.burger-menu');
-const body = document.querySelector('body');
-const navList = document.querySelector('.navigation_list');
-const navBackground = document.querySelector('.navigation_background');
+const BURGER_MENU = document.querySelector('#nav_main');
+const BURGER_ICON = document.querySelector('.burger-menu');
+const BODY = document.querySelector('body');
+const NAV_LIST = document.querySelector('.navigation_list');
+const NAV_BACKGROUND = document.querySelector('.navigation_background');
 
-burgerIcon.addEventListener('click', function(e) {
-    burgerMenu.classList.toggle('active');
-    navBackground.classList.toggle('active');
-    body.classList.toggle('no_scroll');
+BURGER_ICON.addEventListener('click', function(e) {
+    BURGER_MENU.classList.toggle('active');
+    NAV_BACKGROUND.classList.toggle('active');
+    BODY.classList.toggle('no_scroll');
 });
 
-navBackground.addEventListener( 'click', (e) => { 
-	if (e.target === navBackground) {
-		burgerMenu.classList.remove('active');
-        navBackground.classList.remove('active');
-        body.classList.remove('no_scroll');
-        burgerIcon.checked = false;
+NAV_BACKGROUND.addEventListener( 'click', (e) => { 
+	if (e.target === NAV_BACKGROUND) {
+		BURGER_MENU.classList.remove('active');
+        NAV_BACKGROUND.classList.remove('active');
+        BODY.classList.remove('no_scroll');
+        BURGER_ICON.checked = false;
 	}
 })
 
-navList.addEventListener('click', function(e) {
+NAV_LIST.addEventListener('click', function(e) {
     if (e.target.classList.contains('navigation_link')){
-        burgerMenu.classList.remove('active');
-        navBackground.classList.remove('active');
-        body.classList.remove('no_scroll');
-        burgerIcon.checked = false;
+        BURGER_MENU.classList.remove('active');
+        NAV_BACKGROUND.classList.remove('active');
+        BODY.classList.remove('no_scroll');
+        BURGER_ICON.checked = false;
     }
 });
 
@@ -142,6 +142,11 @@ async function Slider () {
             <button class="button_learn">Learn more</button>
         `;
             document.querySelector('#left_item').appendChild(newItem);
+
+            newItem.addEventListener('click', () => {
+                document.querySelector('.popup').innerHTML = '';
+                popUp(item + 1);
+            });
         });
     }
 
@@ -155,7 +160,13 @@ async function Slider () {
             <button class="button_learn">Learn more</button>
         `;
             document.querySelector('#center_item').appendChild(newItem);
+
+            newItem.addEventListener('click', () => {
+                document.querySelector('.popup').innerHTML = '';
+                popUp(item + 1);
+            });
         });
+
     }
 
     function next() {
@@ -168,6 +179,11 @@ async function Slider () {
             <button class="button_learn">Learn more</button>
         `;
             document.querySelector('#right_item').appendChild(newItem);
+
+            newItem.addEventListener('click', () => {
+                document.querySelector('.popup').innerHTML = '';
+                popUp(item + 1);
+            });
         });
     }
 
@@ -239,7 +255,6 @@ async function Slider () {
 	previous();
 	current();
 	next();
-    console.log(countSlides)
 }
 
 Slider ();
@@ -256,3 +271,78 @@ window.addEventListener('resize', () => {
         Slider ();
     }
 });
+
+
+/* Popup */
+
+const POPUP_WRAPPER = document.querySelector('.popup_wrapper');
+
+    async function popUp(number) {
+		const PETS_INFO = await getPets();
+        
+        BODY.classList.toggle('no_scroll');
+		POPUP_WRAPPER.classList.toggle('popup_wrapper_active');
+
+		let popupWindow = document.createElement('div');
+		popupWindow.classList.add('popup_window');
+		popupWindow.innerHTML = `
+            <button class="popup_close"><img src="../../assets/icons/Vector.png" alt="close"></button>
+            <div class="popup_content">
+                <div class="img_wrapper">
+                <img src="${PETS_INFO[number - 1].img}" alt="img_pet" class="popup_img">
+                </div>
+                <div class="popup_info">
+                    <div class = popup_name>
+                        <h3 class="popup_title">${PETS_INFO[number - 1].name}</h3>
+                        <div class="popup_subtitle">${PETS_INFO[number - 1].type} - ${PETS_INFO[number - 1].breed}</div>
+                    </div>
+                    <div class="popup_description">${PETS_INFO[number - 1].description}</div>
+                    <ul class="pets_list">
+                        <li class="pets_item">
+                            <span>Age:</span> ${PETS_INFO[number - 1].age}
+                        </li>
+                        <li class="pets_item">
+                            <span>Inoculation:</span> ${PETS_INFO[number - 1].inoculations}
+                        </li>
+                        <li class="pets_item">
+                            <span>Diseases:</span> ${PETS_INFO[number - 1].diseases}
+                        </li>
+                        <li class="pets_item">
+                            <span>Parasites:</span> ${PETS_INFO[number - 1].parasites}
+                        </li>
+                    </ul>
+                </div>
+            </div>    
+		`;
+        
+        document.querySelector('.popup').appendChild(popupWindow);
+		
+        POPUP_WRAPPER.addEventListener('click', (e) => {
+            if (e.target === POPUP_WRAPPER) {
+                POPUP_WRAPPER.classList.remove('popup_wrapper_active');
+                BODY.classList.remove('no_scroll');
+            }
+        });
+
+        POPUP_WRAPPER.addEventListener('click', (e) => {
+            if (e.target === document.querySelector('.popup_close')) {
+                POPUP_WRAPPER.classList.remove('popup_wrapper_active');
+                BODY.classList.remove('no_scroll');
+            }
+        });
+
+        POPUP_WRAPPER.addEventListener('click', (e) => {
+            if (e.target === document.querySelector('.popup_window')) {
+                POPUP_WRAPPER.classList.remove('popup_wrapper_active');
+                BODY.classList.remove('no_scroll');
+            }
+        });
+
+        POPUP_WRAPPER.addEventListener('click', (e) => {
+            if (e.target === document.querySelector('.popup_close > *')) {
+                POPUP_WRAPPER.classList.remove('popup_wrapper_active');
+                BODY.classList.remove('no_scroll');
+            }
+        });
+
+	}
