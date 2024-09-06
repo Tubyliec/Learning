@@ -49,8 +49,7 @@ const LAST_PAGE = document.querySelector('.last_page');
 
 async function Pagination() {
     const PETS_INFO =  await getPets();
-    const PETS_COUNT = PETS_INFO.length;
-    const PETS_COMPLETE_DATA = petsData();
+    const PETS = petsData();
     let currentPage = 1;
 	let itemsCount = 8;
 
@@ -83,7 +82,7 @@ async function Pagination() {
         return petsArray;
     }
 
-    function petsCards(PETS_COMPLETE_DATA, itemsCount, currentPage) {
+    function petsCards(PETS, itemsCount, currentPage) {
 
         CURRENT_PAGE.innerText = `${currentPage}`;
         SLIDER.innerHTML = '';
@@ -102,22 +101,101 @@ async function Pagination() {
                 <button class="button_learn">Learn more</button>
             `;
 
+            SLIDER.appendChild(petCard);
+            
+
             petCard.addEventListener('click', () => {
                 document.querySelector('.popup').innerHTML = '';
-                openModal(item.id);
+                popUp(item.number);
             });
-
-            SLIDER.appendChild(petCard);
         });
+
         return SCROLL;
     }
 
-    petsCards(PETS_COMPLETE_DATA, itemsCount, currentPage);
+    petsCards(PETS, itemsCount, currentPage);
 
 }
 
 
 Pagination ();
+
+
+
+/* Popup */
+
+const POPUP_WRAPPER = document.querySelector('.popup_wrapper');
+
+    async function popUp(number) {
+		const PETS_INFO = await getPets();
+        
+        BODY.classList.toggle('no_scroll');
+		POPUP_WRAPPER.classList.toggle('popup_wrapper_active');
+
+		let popupWindow = document.createElement('div');
+		popupWindow.classList.add('popup_window');
+		popupWindow.innerHTML = `
+            <button class="popup_close"><img src="../../assets/icons/Vector.png" alt="close"></button>
+            <div class="popup_content">
+                <div class="img_wrapper">
+                <img src="${PETS_INFO[number - 1].img}" alt="img_pet" class="popup_img">
+                </div>
+                <div class="popup_info">
+                    <div class = popup_name>
+                        <h3 class="popup_title">${PETS_INFO[number - 1].name}</h3>
+                        <div class="popup_subtitle">${PETS_INFO[number - 1].type} - ${PETS_INFO[number - 1].breed}</div>
+                    </div>
+                    <div class="popup_description">${PETS_INFO[number - 1].description}</div>
+                    <ul class="pets_list">
+                        <li class="pets_item">
+                            <span>Age:</span> ${PETS_INFO[number - 1].age}
+                        </li>
+                        <li class="pets_item">
+                            <span>Inoculation:</span> ${PETS_INFO[number - 1].inoculations}
+                        </li>
+                        <li class="pets_item">
+                            <span>Diseases:</span> ${PETS_INFO[number - 1].diseases}
+                        </li>
+                        <li class="pets_item">
+                            <span>Parasites:</span> ${PETS_INFO[number - 1].parasites}
+                        </li>
+                    </ul>
+                </div>
+            </div>    
+		`;
+        
+        document.querySelector('.popup').appendChild(popupWindow);
+		
+        POPUP_WRAPPER.addEventListener('click', (e) => {
+            if (e.target === POPUP_WRAPPER) {
+                POPUP_WRAPPER.classList.remove('popup_wrapper_active');
+                BODY.classList.remove('no_scroll');
+            }
+        });
+
+        POPUP_WRAPPER.addEventListener('click', (e) => {
+            if (e.target === document.querySelector('.popup_close')) {
+                POPUP_WRAPPER.classList.remove('popup_wrapper_active');
+                BODY.classList.remove('no_scroll');
+            }
+        });
+
+        POPUP_WRAPPER.addEventListener('click', (e) => {
+            if (e.target === document.querySelector('.popup_window')) {
+                POPUP_WRAPPER.classList.remove('popup_wrapper_active');
+                BODY.classList.remove('no_scroll');
+            }
+        });
+
+        POPUP_WRAPPER.addEventListener('click', (e) => {
+            if (e.target === document.querySelector('.popup_close > *')) {
+                POPUP_WRAPPER.classList.remove('popup_wrapper_active');
+                BODY.classList.remove('no_scroll');
+            }
+        });
+
+	}
+
 
 	
 

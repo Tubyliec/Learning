@@ -145,7 +145,7 @@ async function Slider () {
 
             newItem.addEventListener('click', () => {
                 document.querySelector('.popup').innerHTML = '';
-                popUp(item + 1);
+                popUp(item.number);
             });
         });
     }
@@ -279,7 +279,7 @@ const POPUP_WRAPPER = document.querySelector('.popup_wrapper');
 
     async function popUp(number) {
 		const PETS_INFO = await getPets();
-        
+                
         BODY.classList.toggle('no_scroll');
 		POPUP_WRAPPER.classList.toggle('popup_wrapper_active');
 
