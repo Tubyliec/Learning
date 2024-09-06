@@ -9,18 +9,19 @@
 </head>
 <body>
     <div class="container">
+        <div class="navigation_background"></div>
         <div class="wrapper" id="header_wrapper">
             <header>
                 <div id="logo">
                     <h1><a href="../main/index.html">Cozy House</a></h1>
                     <p id="logo_phrase">Shelter for pets in Boston</p>
                 </div>
-                <nav id="nav_main">
-                    <ul>
-                        <li><a href="../main/index.html">About the shelter</a></li>
+                <nav id="nav_main" class="nav_main">
+                    <ul class="navigation_list">
+                        <li><a href="../main/index.html" class="navigation_link">About the shelter</a></li>
                         <li>Our pets</li>
-                        <li><a href="../main/index.html#help">Help the shelter</a></li>
-                        <li><a href="#contacts">Contacts</a></li>
+                        <li><a href="../main/index.html#help" class="navigation_link">Help the shelter</a></li>
+                        <li><a href="#contacts" class="navigation_link">Contacts</a></li>
                     </ul>
                 </nav>
                 <div class="menu">
@@ -33,70 +34,15 @@
             <section id="pets">
                 <div id="pets_content">
                     <h3>Our friends who<br>are looking for a house</h3>
-                    <div id="slider">
-                        <div class="card">
-                            <img src="../../assets/images/pets/pets-katrine.png" alt="katrine">
-                            <p class="pet_name">Katrine</p>
-                            <button class="button_learn">
-                                Learn more
-                            </button>
-                        </div>
-                        <div class="card">
-                            <img src="../../assets/images/pets/pets-jennifer.png" alt="jennifer">
-                            <p class="pet_name">Jennifer</p>
-                            <button class="button_learn">
-                                Learn more
-                            </button>
-                        </div>
-                        <div class="card">
-                            <img src="../../assets/images/pets/pets-woody.png" alt="woody">
-                            <p class="pet_name">Woody</p>
-                            <button class="button_learn">
-                                Learn more
-                            </button>
-                        </div>
-                        <div class="card" id="sophia">
-                            <img src="../../assets/images/pets/pets-sophia.png" alt="sophia">
-                            <p class="pet_name">Sophia</p>
-                            <button class="button_learn">
-                                Learn more
-                            </button>
-                        </div>
-                        <div class="card" id="timmy">
-                            <img src="../../assets/images/pets/pets-timmy.png" alt="timmy">
-                            <p class="pet_name">Timmy</p>
-                            <button class="button_learn">
-                                Learn more
-                            </button>
-                        </div>
-                        <div class="card" id="charly">
-                            <img src="../../assets/images/pets/pets-charly.png" alt="charly">
-                            <p class="pet_name">Charly</p>
-                            <button class="button_learn">
-                                Learn more
-                            </button>
-                        </div>
-                        <div class="card" id="scarlet">
-                            <img src="../../assets/images/pets/pets-scarlet.png" alt="scarlet">
-                            <p class="pet_name">Scarlet</p>
-                            <button class="button_learn">
-                                Learn more
-                            </button>
-                        </div>
-                        <div class="card" id="freddie">
-                            <img src="../../assets/images/pets/pets-freddie.png" alt="freddie">
-                            <p class="pet_name">Freddie</p>
-                            <button class="button_learn">
-                                Learn more
-                            </button>
-                        </div>
+                    <div class="slider">
+                        
                     </div>
                     <div id="button_area">
-                        <button class="button_navigation" disabled>&lt;&lt;</button>
-                        <button class="button_navigation" disabled>&lt;</button>
-                        <button class="button_navigation">1</button>
-                        <button class="button_navigation">&gt;</button>
-                        <button class="button_navigation">&gt;&gt;</button>
+                        <button class="button_navigation first_page">&lt;&lt;</button>
+                        <button class="button_navigation previous_page">&lt;</button>
+                        <button class="button_navigation current_page"></button>
+                        <button class="button_navigation next_page">&gt;</button>
+                        <button class="button_navigation last_page">&gt;&gt;</button>
                     </div>
                 </div>
             </section>
@@ -141,7 +87,13 @@
                     </div>
                 </div>
             </footer>
-        </div>    
+        </div>
+        <div class="popup_wrapper">
+            <div class="popup">
+                
+            </div>
+        </div>   
+        <script src="script.js"></script>    
     </div>
     
 </body>
