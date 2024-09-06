@@ -92,8 +92,7 @@ async function Pagination() {
         const START = itemsCount * currentPage;
         const END = START + itemsCount;
         const SCROLL = PETS.slice(START, END);
-        console.log(SCROLL)
-        
+                
         SCROLL.forEach(item => {
             let petCard = document.createElement('div');
             petCard.classList.add('card');
@@ -160,6 +159,48 @@ async function Pagination() {
         activeButton()
     });
 
+
+    if (window.screen.availWidth >= 1230) {
+        itemsCount = 8;
+        petsCards(PETS, itemsCount, currentPage);
+        activeButton()
+    }
+
+    if (window.screen.availWidth <= 1229 && window.screen.availWidth >= 700) {
+        itemsCount = 6;
+        petsCards(PETS, itemsCount, currentPage);
+        activeButton()
+
+
+    }
+    if (window.screen.availWidth <= 699.9) {
+        itemsCount = 3;
+        petsCards(PETS, itemsCount, currentPage);
+        activeButton()
+
+    }
+
+    window.addEventListener('resize', () => {
+        if (window.screen.availWidth >= 1230) {
+            itemsCount = 8;
+            petsCards(PETS, itemsCount, currentPage);
+            activeButton()
+        }
+    
+        if (window.screen.availWidth <= 1229 && window.screen.availWidth >= 700) {
+            itemsCount = 6;
+            petsCards(PETS, itemsCount, currentPage);
+            activeButton()
+    
+    
+        }
+        if (window.screen.availWidth <= 699.9) {
+            itemsCount = 3;
+            petsCards(PETS, itemsCount, currentPage);
+            activeButton()
+    
+        }
+    });
     
 }
 
