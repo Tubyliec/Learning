@@ -354,6 +354,7 @@ nav li a:active {
 
 .card:hover {
     outline: 2px solid var(--color-primary);
+    cursor: pointer;
 }
 
 .card:hover button {
@@ -381,12 +382,10 @@ nav li a:active {
     color: var(--color-dark);
 }
 
-.button_navigation:disabled {
+.button_navigation_inactive {
     border: 2px solid var(--color-primary-dark);
-}
-
-.button_navigation:disabled {
     color: var(--color-primary-dark);
+    pointer-events: none;
 }
 
 .button_navigation:hover {

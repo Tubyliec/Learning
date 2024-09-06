@@ -50,6 +50,7 @@ const LAST_PAGE = document.querySelector('.last_page');
 async function Pagination() {
     const PETS_INFO =  await getPets();
     const PETS = petsData();
+    const ALL_PETS = PETS.length;
     let currentPage = 1;
 	let itemsCount = 8;
 
@@ -90,7 +91,8 @@ async function Pagination() {
 
         const START = itemsCount * currentPage;
         const END = START + itemsCount;
-        const SCROLL = PETS_INFO.slice(START, END);
+        const SCROLL = PETS.slice(START, END);
+        console.log(SCROLL)
         
         SCROLL.forEach(item => {
             let petCard = document.createElement('div');
@@ -113,8 +115,52 @@ async function Pagination() {
         return SCROLL;
     }
 
-    petsCards(PETS, itemsCount, currentPage);
+    function activeButton() {
+        if (currentPage === 1) {
+            PREVIOUS_PAGE.classList.add('button_navigation_inactive');
+            FIRST_PAGE.classList.add('button_navigation_inactive');
+        } else {
+            PREVIOUS_PAGE.classList.remove('button_navigation_inactive');
+            FIRST_PAGE.classList.remove('button_navigation_inactive');
+        }
 
+        if (ALL_PETS === currentPage * itemsCount) {
+            NEXT_PAGE.classList.add('button_navigation_inactive');
+            LAST_PAGE.classList.add('button_navigation_inactive');
+        } else {
+            NEXT_PAGE.classList.remove('button_navigation_inactive');
+            LAST_PAGE.classList.remove('button_navigation_inactive');
+        }
+    }
+
+    petsCards(PETS, itemsCount, currentPage);
+    activeButton()
+
+    NEXT_PAGE.addEventListener('click', () => {
+        currentPage += 1;
+        petsCards(PETS, itemsCount, currentPage);
+        activeButton()
+    });
+
+    PREVIOUS_PAGE.addEventListener('click', () => {
+        currentPage -= 1;
+        petsCards(PETS, itemsCount, currentPage);
+        activeButton()
+    });
+
+    FIRST_PAGE.addEventListener('click', () => {
+        currentPage = 1;
+        petsCards(PETS, itemsCount, currentPage);
+        activeButton()
+    });
+
+    LAST_PAGE.addEventListener('click', () => {
+        currentPage = ALL_PETS / itemsCount;
+        petsCards(PETS, itemsCount, currentPage);
+        activeButton()
+    });
+
+    
 }
 
 
