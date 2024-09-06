@@ -26,6 +26,10 @@ html a {
     --color-light-second: #fafafa;
 }
 
+body.no_scroll {
+    overflow: hidden;
+}
+
 h1 {
     font-family: Georgia;
     color: var(--color-primary);
@@ -229,13 +233,48 @@ nav li a:active {
 
 }
 
-@media (max-width: 767px) {
+@media (max-width: 767.9px) {
     #nav_main {
-        display: none;
+        position: absolute;
+        top: 0;
+        right: -350px;
+        background: var(--color-light);
+        height: 100%;
+        width: 320px;
+        transition: 1s;
+        z-index: 2;
+    }
+
+    #nav_main.active {
+        right: 0;
+        transition: 1s;
+    }
+
+    .navigation_background.active {
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        position: fixed;
+        background-color: var(--color-dark);
+        opacity: 0.8;
+        z-index: 1;
+    }
+
+    #nav_main ul {
+        flex-direction: column;
+        padding: 248px 38px 0 38px;
+        background: var(--color-light);
+    }
+
+    #nav_main li {
+        font-size: 32px;
+        letter-spacing: 0;
     }
 
     .menu {
         display: block;
+        z-index: 3;
     }
     
     header {
@@ -248,6 +287,7 @@ nav li a:active {
 
 #pets {
     display: flex;
+    justify-content: center;
 }
 #pets_wrapper {
     background-color: var(--color-light);
@@ -266,7 +306,7 @@ nav li a:active {
     text-align: center;
 }
 
-#slider {
+.slider {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -286,15 +326,13 @@ nav li a:active {
     justify-content: space-between;
 }
 
-.card p {
+
+.pet_name {
+    margin-top: 30px;
     font-family: Georgia;
     font-size: 20px;
     text-align: center;
     color: var(--color-dark-second);
-}
-
-.pet_name {
-    margin-top: 30px;
 }
 
 .button_learn {
@@ -316,6 +354,7 @@ nav li a:active {
 
 .card:hover {
     outline: 2px solid var(--color-primary);
+    cursor: pointer;
 }
 
 .card:hover button {
@@ -343,12 +382,10 @@ nav li a:active {
     color: var(--color-dark);
 }
 
-.button_navigation:disabled {
+.button_navigation_inactive {
     border: 2px solid var(--color-primary-dark);
-}
-
-.button_navigation:disabled {
     color: var(--color-primary-dark);
+    pointer-events: none;
 }
 
 .button_navigation:hover {
@@ -575,4 +612,123 @@ footer a {
         margin: 0 15px;
     }
 
+}
+
+
+/* Popup */
+
+.popup_wrapper{
+    display: none;
+}
+
+.popup_wrapper_active {
+    display: block;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    position: fixed;
+    background-color: rgba(8, 8, 8, 0.8);
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.popup {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup_window {
+    display: flex;
+    flex-direction: column;
+    margin: 190px;
+}
+
+.popup_content {
+    margin-right: 52px;
+    border-radius: 10px;
+    background-color: var(--color-light);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+}
+
+.img_wrapper img {
+    width: 500px;
+    height: 500px;
+}
+
+.popup_close {
+    width: 52px;
+    height: 52px;
+    border-radius: 50px;
+    align-self: flex-end;
+    border: 3px var(--color-primary) solid;
+}
+
+.popup_close:hover {
+    background-color: var(--color-primary);
+    cursor: pointer;
+}
+
+.popup_info {
+    margin: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.pets_list {
+    margin-left: 15px;
+   
+}
+
+.pets_list li::marker {
+    color: var(--color-primary);
+}
+
+.pets_list li span {
+    font-weight: bolder;
+}
+.pets_list li {
+    margin-bottom: 10px;
+}
+
+.popup_subtitle {
+    font-family: Georgia;
+    font-size: 20px;
+    line-height: 115%;
+    letter-spacing: 0.06em;
+}
+
+
+@media (max-width: 450.9px) {
+    .img_wrapper img {
+        display: none;
+    }
+    .popup_window {
+        margin: 0;
+        margin-left: 40px;
+    }
+
+    .popup_name {
+        text-align: center;
+    }
+}
+
+@media (min-width: 451px) and (max-width: 800px){
+    .img_wrapper img {
+        width: 350px;
+        height: 350px;
+    }
+
+    .popup_window {
+        margin: 0;
+        margin-left: 70px;
+    }
 }
