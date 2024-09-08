@@ -736,12 +736,36 @@ nav li a:active {
     #pets_content {
         margin: 80px 30px 100px 30px;
     }
+
+    
 }
 
-@media (min-width:451px) and (max-width: 715px) {
+@media (min-width:716px) and (max-width: 800px){
+    #slider {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        row-gap: 30px;
+        column-gap: 300px;
+    }
+
+    .button_arrow {
+        order: 2;
+    }
+
+    #button_pets a{
+        letter-spacing: 0.06em;
+        padding: 15px;
+    }
+}
+
+@media (min-width:451px) and (max-width: 715.9px) {
     #slider {
         margin: 42px 5px;
         gap: 12px;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
     }
 
     #slider_body {
