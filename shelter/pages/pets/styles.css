@@ -235,7 +235,7 @@ nav li a:active {
 
 @media (max-width: 767.9px) {
     #nav_main {
-        position: absolute;
+        position: fixed;
         top: 0;
         right: -350px;
         background: var(--color-light);
@@ -243,11 +243,13 @@ nav li a:active {
         width: 320px;
         transition: 1s;
         z-index: 2;
+        visibility: hidden;
     }
 
     #nav_main.active {
         right: 0;
         transition: 1s;
+        visibility: visible;
     }
 
     .navigation_background.active {
