@@ -1,0 +1,26 @@
+/* Global */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+/* Footer */
+
+footer {
+    display: flex;
+    color: white;
+    background-color: black;
+    justify-content: space-between; 
+    align-items: center;
+}
+footer img {
+    width: 100px;
+    height: 30px;
+    
+}   
+footer p {
+    font-size: larger;
+    padding: 5px;
+    cursor: default; 
+}
