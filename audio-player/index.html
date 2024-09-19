@@ -8,7 +8,7 @@
 </head>
 <body>
     <div class="wrapper">
-        <div class="opacity">
+        <div class="blur">
             <div class="player">
                 <div class="avatar">
 
@@ -19,11 +19,11 @@
                         <p class="song"></p>
                     </div>
                     <div class="player_control">
-                        <div class="control_button backward">
+                        <div class="control_button" id="previous">
                         </div>
-                        <div class="control_button playing">
+                        <div class="control_button" id="playing">
                         </div>
-                        <div class="control_button forward">
+                        <div class="control_button" id="next">
                         </div>
                     </div>
                     <div class="time_bar">
@@ -31,17 +31,17 @@
                             <p class="current">0:00</p>
                             <p>/</p>
                             <p class="duration">0:00</p>
-                          </div>
+                        </div>
                           <input class="seek-bar" type="range" min='0' max="100" value="0">
                     </div>
                 </div>
             </div>
-            <footer>
-                <a href="https://github.com/Tubyliec"><img src="assets/icons/github.svg" alt="GitHub"></a>
-                <p>2024</p>
-                <a href="https://rs.school/courses/javascript"><img src="assets/icons/rsschool.svg" alt="Rsschool Icon"></a>
-            </footer>
         </div>
+        <footer>
+            <a href="https://github.com/Tubyliec"><img src="assets/icons/github.svg" alt="GitHub"></a>
+            <p>2024</p>
+            <a href="https://rs.school/courses/javascript"><img src="assets/icons/rsschool.svg" alt="Rsschool Icon"></a>
+        </footer>    
     </div>
     <script src="script.js"></script>    
 </body>

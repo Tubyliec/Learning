@@ -1,8 +1,99 @@
 /* Global */
 
 * {
-    box-sizing: border-box;
     margin: 0;
+}
+
+.wrapper {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-image:  url("assets/images/acdc.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: rgb(255, 215, 0);
+}
+
+/* Player */
+
+
+.blur {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(5px);
+}
+
+.player {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    height: 500px;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    border-radius: 10px;
+    border: 2px solid rgb(255, 215, 0);
+}
+
+.avatar {
+    background-image:  url("assets/images/acdc.jpg");
+    background-size: cover;
+    background-position-x: center;
+    height: 50%;
+    width: 80%;
+    border-radius: 10px;
+    border: 2px solid rgb(255, 215, 0);
+}
+
+.player_control {
+    display: flex;
+    align-items: center;
+}
+
+#previous {
+    background-image:  url("assets/icons/backward.png");
+    background-size: cover;
+}
+
+#playing {
+    background-image:  url("assets/icons/play.png");
+    background-size: cover;
+    width: 60px;
+    height: 60px;
+}
+
+#playing .played {
+    background-image:  url("assets/icons/pause.png");
+    background-size: cover;
+}
+
+#next {
+    background-image:  url("assets/icons/forward.png");
+    background-size: cover;
+}
+
+.control_button {
+    width: 40px;
+    height: 40px;
+}
+
+.control_button:hover {
+    cursor: pointer;
+    transform: scale(1.2);
+}
+
+.time_bar {
+    display: flex;
+    flex-direction: column;
+}
+
+.time {
+    display: flex;
+    justify-content: space-around;
 }
 
 /* Footer */
@@ -13,6 +104,7 @@ footer {
     background-color: black;
     justify-content: space-between; 
     align-items: center;
+    padding: 10px;
 }
 footer img {
     width: 100px;
