@@ -31,9 +31,9 @@ const PLAYLIST = [
     }
 ]
 
-const PREVIOUS = document.querySelector('#previous');
-const PLAY = document.querySelector('#playing');
-const NEXT = document.querySelector('#next');
+const PREVIOUS = document.querySelector('.previous');
+const PLAY = document.querySelector('.playing');
+const NEXT = document.querySelector('.next');
 
 const SINGER = document.querySelector('.singer');
 const SONG = document.querySelector('.song');
@@ -46,6 +46,30 @@ const SEEK_BAR = document.querySelector('.seek-bar');
 
 let  audio = new Audio();
 let playing = false;
+let index = 0;
 
 audio.src = PLAYLIST[index].src;
-playNow(index);
+
+function loadSong() {
+    SINGER.innerHTML = PLAYLIST[index].singer;
+    SONG.innerHTML = PLAYLIST[index].song;
+    AVATAR.style.backgroundImage = `url("${PLAYLIST[index].avatar}")`;
+    BACKGROUND.style.backgroundImage = `url("${PLAYLIST[index].avatar}")`;
+}
+
+function playSong() {
+    PLAY.classList.toggle('played');
+    if (playing === false) {
+        audio.play();
+        playing = true;
+        loadSong(index);
+    } else {
+        audio.pause();
+        playing = false;
+    }
+}
+
+PLAY.addEventListener('click', playSong);
+ 
+loadSong(index);
+

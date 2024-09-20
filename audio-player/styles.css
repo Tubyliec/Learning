@@ -9,7 +9,6 @@
     height: 100vh;
     display: flex;
     flex-direction: column;
-    background-image:  url("assets/images/acdc.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     color: rgb(255, 215, 0);
@@ -30,17 +29,17 @@
 .player {
     display: flex;
     flex-direction: column;
-    width: 400px;
+    width: 300px;
     height: 500px;
     justify-content: center;
     align-items: center;
     background-color: black;
     border-radius: 10px;
     border: 2px solid rgb(255, 215, 0);
+    gap: 30px;
 }
 
 .avatar {
-    background-image:  url("assets/images/acdc.jpg");
     background-size: cover;
     background-position-x: center;
     height: 50%;
@@ -49,36 +48,31 @@
     border: 2px solid rgb(255, 215, 0);
 }
 
-.player_control {
+.player_data {
     display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
+    text-align: center;
+    width: 80%;
+    gap: 10px;
 }
 
-#previous {
-    background-image:  url("assets/icons/backward.png");
-    background-size: cover;
+.info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
-#playing {
-    background-image:  url("assets/icons/play.png");
-    background-size: cover;
-    width: 60px;
-    height: 60px;
-}
-
-#playing .played {
-    background-image:  url("assets/icons/pause.png");
-    background-size: cover;
-}
-
-#next {
-    background-image:  url("assets/icons/forward.png");
-    background-size: cover;
+.singer {
+    font-size: larger;
 }
 
 .control_button {
     width: 40px;
     height: 40px;
+    border-radius: 50%;
+    border: 2px solid rgb(255, 215, 0);
 }
 
 .control_button:hover {
@@ -86,14 +80,50 @@
     transform: scale(1.2);
 }
 
+.control_button:active {
+    cursor: pointer;
+    transform: scale(0.8);
+}
+
+.player_control {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.previous {
+    background-image:  url("assets/icons/backward.png");
+    background-size: cover;
+}
+
+.playing {
+    background-image:  url("assets/icons/play.png");
+    background-size: cover;
+    width: 60px;
+    height: 60px;
+}
+
+.played {
+    background-image:  url("assets/icons/pause.png");
+    background-size: cover;
+}
+
+.next {
+    background-image:  url("assets/icons/forward.png");
+    background-size: cover;
+}
+
 .time_bar {
     display: flex;
     flex-direction: column;
+    gap: 10px;
+    width: 80%;
 }
 
 .time {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+    gap: 10px;
 }
 
 /* Footer */
