@@ -150,3 +150,9 @@ footer p {
     padding: 5px;
     cursor: default; 
 }
+
+@media (max-width: 300px) {
+    footer {
+        flex-direction: column;
+    }
+}
