@@ -36,7 +36,7 @@
     background-color: black;
     border-radius: 10px;
     border: 2px solid rgb(255, 215, 0);
-    gap: 30px;
+    gap: 20px;
 }
 
 .avatar {
@@ -55,7 +55,7 @@
     align-items: center;
     text-align: center;
     width: 80%;
-    gap: 10px;
+    gap: 20px;
 }
 
 .info {
@@ -124,6 +124,10 @@
     display: flex;
     justify-content: center;
     gap: 10px;
+}
+
+.seek_bar {
+    cursor: pointer;
 }
 
 /* Footer */
