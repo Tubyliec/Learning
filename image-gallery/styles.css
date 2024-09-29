@@ -1,0 +1,157 @@
+/* Global */
+
+* {
+    margin: 0;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* Header */
+
+.header_container {
+    padding: 10px 45px;
+    background-color: black;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid white;
+}
+
+.header_logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo_image {
+    height: 50px;
+}
+
+.logo_title {
+    color: white;
+    font-size: x-large;
+}
+
+
+.search_container {
+    display: flex;
+    align-items: center;
+}
+
+.search_form {
+    display: flex;
+    align-items: center;
+    width: 350px;
+    gap: 2px;
+}
+.search {
+    width: 100%;
+    border-radius: 15px;
+    padding: 5px 10px;
+}
+
+button {
+    border: none;
+    outline: none;
+    padding-top: 5px;
+    border-radius: 50%;
+}
+
+button:hover {
+    cursor: pointer;
+    scale: 1.05;
+}
+
+.submit {
+    background-color: black;
+}
+
+.button_img {
+    height: 25px;
+}
+
+.clear_btn {
+    position: relative;
+    right: 10%;
+    background-color: white;
+}
+
+.clear_img {
+    height: 10px;
+}
+
+/* Gallery */
+
+.image_container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 40px;
+    padding: 30px 0;
+    background-color: black;
+}
+
+.gallery_image {
+    width: 450px;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 5px;
+    border: 1px solid white;
+}
+
+/* Footer */
+
+footer {
+    display: flex;
+    color: white;
+    background-color: black;
+    justify-content: space-between; 
+    align-items: center;
+    padding: 10px 45px 10px 10px;
+    border-top: 1px solid white;
+}
+
+footer img {
+    width: 100px;
+    height: 30px;
+    
+}   
+footer p {
+    font-size: larger;
+    padding: 5px;
+    cursor: default; 
+}
+
+@media (max-width: 550px) {
+    .header_container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .search_form {
+        width: 100%;
+    }
+
+    .clear_btn {
+        position: relative;
+        right: 15%;
+        background-color: white;
+    }
+
+    .gallery_image {
+        width: 80%;
+        height: 200px;
+    }
+    
+}
+
+@media (max-width: 300px) {
+    footer {
+        flex-direction: column;
+        padding: 10px;
+    }
+    
+}
