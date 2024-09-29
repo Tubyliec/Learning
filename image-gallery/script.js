@@ -1,5 +1,6 @@
 const IMAGE_CONTAINER = document.querySelector('.image_container');
-
+const SEARCH_FORM = document.querySelector('.search_form');
+const CLEAR_BTN = document.querySelector('.clear_btn');
 
 let keySearch = 'Belarus'
 
@@ -19,5 +20,18 @@ function showData(DATA) {
         IMAGE_CONTAINER.append(image);
     }
 }
+
+SEARCH_FORM.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const DATA = new FormData(SEARCH_FORM);
+    const REQUEST = DATA.get("text");
+    let keySearch = REQUEST;
+    getData(keySearch);
+  });
+
+  CLEAR_BTN.addEventListener("click", (e) => {
+    e.preventDefault();
+    document.querySelector('.search').value = "";
+  });
 
 getData(keySearch);
