@@ -1,8 +1,11 @@
 const CANVAS = document.querySelector('.board');
 const CONTEXT = CANVAS.getContext("2d");
+const GAME_SCORE_CURRENT = document.querySelector('.current_score_value');
 
 const FOOD_IMAGE = new Image();
 FOOD_IMAGE.src = "assets/images/food.png";
+const BODY_IMAGE = new Image();
+BODY_IMAGE.src = "assets/images/circle.png";
 
 let cell = 32;
 let score = 0;
@@ -14,6 +17,7 @@ let food = {
 };
 
 let caterpillar = [];
+let newHead;
 
 caterpillar[0] = {
 	x: 8 * cell,
@@ -32,10 +36,11 @@ function randomNumber() {
 
 function drawCaterpillar() {
     for(let i = 0; i < caterpillar.length; i++) {
-    CONTEXT.fillStyle = 'rgb(119,221,119)';
-    CONTEXT.strokeStyle = 'black';
-    CONTEXT.fillRect(caterpillar[i].x, caterpillar[i].y, cell, cell);
-    CONTEXT.strokeRect(caterpillar[i].x, caterpillar[i].y, cell, cell);
+		CONTEXT.drawImage(BODY_IMAGE, caterpillar[i].x, caterpillar[i].y);
+	//CONTEXT.fillStyle = 'rgb(119,221,119)';
+    //CONTEXT.strokeStyle = 'black';
+    //CONTEXT.fillRect(caterpillar[i].x, caterpillar[i].y, cell, cell);
+    //CONTEXT.strokeRect(caterpillar[i].x, caterpillar[i].y, cell, cell);
 }
 }
 
@@ -43,6 +48,7 @@ function moveCaterpillar() {
 
     if(caterpillarX == food.x && caterpillarY == food.y) {
 		score++;
+		GAME_SCORE_CURRENT.textContent = score;
 		food = {
 			x: randomNumber(),
 			y: randomNumber(),
@@ -56,15 +62,20 @@ function moveCaterpillar() {
 	if(direction == "up") caterpillarY -= cell;
 	if(direction == "down") caterpillarY += cell;
 
-	let newHead = {
+	newHead = {
 		x: caterpillarX,
 		y: caterpillarY
 	};
 
+	for(let i = 0; i < caterpillar.length; i++) {
+		if(newHead.x == caterpillar[i].x && newHead.y == caterpillar[i].y) {
+			clearInterval(rendering);
+		}
+	};
+
     caterpillar.unshift(newHead);
+
 }
-
-
 
 document.addEventListener("keydown", moveDirection);
 
@@ -78,6 +89,8 @@ function moveDirection(event) {
 	else if(event.keyCode == 40 && direction != "up")
 		direction = "down";
 }
+
+
 
 function drawGame() {
     CONTEXT.fillStyle = 'black';
