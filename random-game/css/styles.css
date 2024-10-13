@@ -1,8 +1,16 @@
 /* Global */
 
+@font-face {
+    font-family: "Retro";   
+    src: local("Retro"),
+        url("../assets/fonts/Retro.woff") format("woff");
+  }
+
 * {
     margin: 0;
     padding: 0;
+    font-family: Retro;
+    font-weight: 300;
 }
 
 body {
@@ -37,7 +45,7 @@ body {
 .game_info {
     color: white;
     font-size: 40px;
-    line-height: 90%;
+    line-height: 95%;
 }
 
 .game_score {
@@ -51,6 +59,25 @@ body {
     padding-left: 20%;
 }
 
+.button_area {
+    display: flex;
+    gap: 5%;
+}
+
+.info_button {
+    padding: 3%;
+    width: 45%;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.info_button:hover, .close_button:hover {
+    transform: scale(1.1);
+}
+
+.info_button:active, .close_button:active {
+    transform: scale(0.9);
+}
 
 .board { 
     margin: 0 auto;
@@ -65,14 +92,107 @@ body {
 
 .popup_window_active{
     position: fixed;
-    z-index: 1;
+    z-index: 2;
     margin: 3% auto;
+    padding: 3%;
     background-color: black;
+    color: white;
     display: flex;
-    width: 50%;
-    height: 80%;
+    flex-direction: column;
+    gap: 5%;
+    align-items: center;
+    width: 60%;
+    height: 70%;
     border-radius: 2%;
     border: 1px solid white;
+}
+
+.popup_window_active h1 {
+    font-size: 48px;
+    text-transform: uppercase;
+}
+
+.input_form {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 1%;
+}
+
+.popup_wrapper {
+    display: none;
+}
+
+.popup_wrapper_active {
+    display: block;
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+}
+
+.rating_window {
+    display: none;
+}
+
+.rating_window_active {
+    position: fixed;
+    z-index: 2;
+    margin: 3% auto;
+    padding: 3%;
+    background-color: black;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 5%;
+    align-items: center;
+    width: 60%;
+    height: 70%;
+    border-radius: 2%;
+    border: 1px solid white;
+}
+
+.cell {
+    padding: 3px 30px;
+    border: 1px solid white;
+    text-align: center;
+}
+
+.close_button {
+   padding: 1% 3%;
+   border-radius: 10px;
+   width: 20%;
+   cursor: pointer;
+}
+
+.info_window_active {
+    position: fixed;
+    z-index: 2;
+    margin: 3% auto;
+    padding: 3%;
+    background-color: black;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    gap: 5%;
+    width: 60%;
+    height: 70%;
+    border-radius: 2%;
+    border: 1px solid white;
+}
+
+.info_window_active article {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.info_window_active h3 {
+    text-transform: uppercase;
 }
 
 /* Footer */
