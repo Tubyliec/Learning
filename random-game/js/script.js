@@ -130,6 +130,65 @@ function moveDirection(event) {
 		direction = "down";
 }
 
+function createRatingTable() {
+	ratingList = JSON.parse(window.localStorage.getItem('ratingList'));
+	if (ratingList != null && ratingList.length > 1) {
+		ratingList.sort(function(a, b) {
+		return b.score - a.score;
+		});
+	}
+
+	RATING_WINDOW.classList.add('rating_window');
+
+	const TITLE = document.createElement('h1');
+	TITLE.innerHTML = 'Top scores'
+	RATING_WINDOW.appendChild(TITLE);
+
+	const RATING_TABLE = document.createElement('div');
+	const HEAD = document.createElement('tr');
+	RATING_TABLE.appendChild(HEAD);
+	RATING_TABLE.classList.add('table');
+
+	for (let i = 0; i < 2; i++) {
+		const HEAD_CELL = document.createElement('th');
+		HEAD_CELL.classList.add('cell');
+		(i == 0) ? HEAD_CELL.innerHTML = 'Name' : HEAD_CELL.innerHTML = 'Score';
+		HEAD.appendChild(HEAD_CELL);
+	}
+
+	for (let i = 0; i < 10; i++) {
+		const TABLE_ROW = document.createElement('tr');
+		RATING_TABLE.appendChild(TABLE_ROW);
+		for (let j = 0; j < 2; j++) {
+		  const TABLE_CELL = document.createElement('td');
+		  if (ratingList != null && ratingList[i] == undefined) {
+			TABLE_CELL.innerHTML = `-`;
+		  }
+		  if (ratingList != null && ratingList[i]) {
+			if (j == 0) TABLE_CELL.innerHTML = `${ratingList[i].name}`;
+			if (j == 1) TABLE_CELL.innerHTML = `${ratingList[i].score}`;
+		    }
+			TABLE_CELL.classList.add('cell');
+		  	TABLE_ROW.appendChild(TABLE_CELL);
+		}
+	  }
+	RATING_WINDOW.appendChild(RATING_TABLE);
+
+	const CLOSE_BUTTON = document.createElement('button');
+	CLOSE_BUTTON.classList.add('close_button');
+	CLOSE_BUTTON.innerHTML = 'Close'
+	RATING_WINDOW.appendChild(CLOSE_BUTTON);
+
+	document.querySelector('.wrapper').appendChild(RATING_WINDOW);
+
+	CLOSE_BUTTON.addEventListener('click', (e) => {
+		RATING_WINDOW.classList.remove('rating_window_active')
+		POPUP_WRAPPER.classList.remove('popup_wrapper_active');
+		playAudio(SOUNDS.choose);
+	  });
+}
+createRatingTable();
+
 function createLosePopup() {
 	POPUP_LOSE_WINDOW.classList.add('popup_window');
 	POPUP_WRAPPER.classList.add('popup_wrapper');
@@ -159,7 +218,6 @@ function createLosePopup() {
 		}
 		player.score = score;
 
-		ratingList = JSON.parse(window.localStorage.getItem('ratingList'));
     	if (!ratingList) {
 			ratingList = [];
 		  }
@@ -174,6 +232,7 @@ function createLosePopup() {
 
 		ratingList.push(player);
 		window.localStorage.setItem('ratingList', JSON.stringify(ratingList));
+		console.log(ratingList);
 	  });
 }
 
@@ -183,7 +242,7 @@ function createWinPopup() {
     POPUP_WIN_WINDOW.innerHTML = `
 	<h1>You win!</h1>
 	<p>Send your result in table of scores.</p>
-	<form class="input_form">
+	<form class="input_form" id="form_winner">
 		<div>
 			<label for="name_field">Enter your name: </label>
 			<input id="name_field" type="text" name="text" />
@@ -197,7 +256,7 @@ function createWinPopup() {
 	document.querySelector('.wrapper').appendChild(POPUP_WIN_WINDOW);
 	document.querySelector('.wrapper').appendChild(POPUP_WRAPPER);
 
-	document.querySelector('.input_form').addEventListener('submit', (e) => {
+	document.querySelector('#form_winner').addEventListener('submit', (e) => {
 		playerName = document.querySelector('#name_field').value;
 
 		player.name = playerName;
@@ -252,63 +311,6 @@ function createInfoPopup() {
 	  });
 }
 
-function createRatingTable() {
-	ratingList = JSON.parse(window.localStorage.getItem('ratingList'));
-	if (ratingList.length > 1) {
-		ratingList.sort(function(a, b) {
-		return b.score - a.score;
-		});
-	}
-
-	RATING_WINDOW.classList.add('rating_window');
-
-	const TITLE = document.createElement('h1');
-	TITLE.innerHTML = 'Top scores'
-	RATING_WINDOW.appendChild(TITLE);
-
-	const RATING_TABLE = document.createElement('div');
-	const HEAD = document.createElement('tr');
-	RATING_TABLE.appendChild(HEAD);
-	RATING_TABLE.classList.add('table');
-
-	for (let i = 0; i < 2; i++) {
-		const HEAD_CELL = document.createElement('th');
-		HEAD_CELL.classList.add('cell');
-		(i == 0) ? HEAD_CELL.innerHTML = 'Name' : HEAD_CELL.innerHTML = 'Score';
-		HEAD.appendChild(HEAD_CELL);
-	}
-
-	for (let i = 0; i < 10; i++) {
-		const TABLE_ROW = document.createElement('tr');
-		RATING_TABLE.appendChild(TABLE_ROW);
-		for (let j = 0; j < 2; j++) {
-		  const TABLE_CELL = document.createElement('td');
-		  if (ratingList[i] == undefined) {
-			TABLE_CELL.innerHTML = `-`;
-		  }
-		  if (ratingList[i]) {
-			if (j == 0) TABLE_CELL.innerHTML = `${ratingList[i].name}`;
-			if (j == 1) TABLE_CELL.innerHTML = `${ratingList[i].score}`;
-		    }
-			TABLE_CELL.classList.add('cell');
-		  	TABLE_ROW.appendChild(TABLE_CELL);
-		}
-	  }
-	RATING_WINDOW.appendChild(RATING_TABLE);
-
-	const CLOSE_BUTTON = document.createElement('button');
-	CLOSE_BUTTON.classList.add('close_button');
-	CLOSE_BUTTON.innerHTML = 'Close'
-	RATING_WINDOW.appendChild(CLOSE_BUTTON);
-
-	document.querySelector('.wrapper').appendChild(RATING_WINDOW);
-
-	CLOSE_BUTTON.addEventListener('click', (e) => {
-		RATING_WINDOW.classList.remove('rating_window_active')
-		POPUP_WRAPPER.classList.remove('popup_wrapper_active');
-		playAudio(SOUNDS.choose);
-	  });
-}
 
 function drawGame() {
     CONTEXT.fillStyle = 'black';
@@ -333,8 +335,7 @@ function drawGame() {
 
 createLosePopup();
 createWinPopup();
-createRatingTable();
-createInfoPopup()
+createInfoPopup();
 
 let rendering = setInterval(drawGame, 200);
 
